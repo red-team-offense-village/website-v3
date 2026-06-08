@@ -1,0 +1,16 @@
+# Netlify is used ONLY for per-PR Deploy Previews.
+# Production is served by GitHub Pages at the apex domain (see .github/workflows/deploy.yml).
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Cancel Netlify's production-branch (main) builds: the `ignore` command exits 0,
+# which tells Netlify "nothing changed, skip this build". Deploy Previews for PRs
+# use a different context and are unaffected, so Netlify only ever publishes previews.
+# This keeps Netlify off the apex domain — GitHub Pages owns production.
+[context.production]
+  ignore = "/bin/true"
