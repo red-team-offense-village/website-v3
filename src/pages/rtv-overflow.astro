@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Pull type-safe streaming schedules directly from the Content Layer
+const scheduleSlots = await getCollection("rtv-overflow");
+scheduleSlots.sort((a, b) => a.data.index - b.data.index);
+---
+
+<BaseLayout title="RTV Overflow | Red Team Village">
+  <Banner title="RTV Overflow" />
+
+  <div
+    class="container mx-auto flex max-w-5xl flex-col gap-12 bg-white px-2 py-12 text-neutral-900"
+  >
+    {/* Informational Header Introduction Section */}
+    <section aria-label="About RTV Overflow">
+      <div class="flex flex-col gap-4 border-l-4 border-red-800 pl-6 sm:ml-4">
+        <h2 class="text-4xl font-bold tracking-tight text-red-800">
+          What is RTV Overflow?
+        </h2>
+        <p class="max-w-3xl text-lg leading-relaxed text-neutral-700">
+          Did you miss a session at DEF CON 33 because the room was at capacity?
+          Or maybe you were busy diving into a CTF and couldn't make the talk?
+          We've got you covered.
+        </p>
+        <p class="max-w-3xl text-lg leading-relaxed text-neutral-700">
+          RTV Overflow is our annual "second chance" streaming event. We invite
+          some of our top-tier speakers to take the stage once more. It's our
+          official kickoff for the road to DEF CON 34, bringing the elite
+          technical insights of the Village directly to your screen, no badge
+          required!
+        </p>
+        <div class="mt-2">
+          <h2 class="mb-4 text-3xl font-bold text-red-800">
+            Where can I watch?
+          </h2>
+          <p class="mb-8 text-lg text-neutral-700">
+            The stream is hosted on our YouTube channel:
+            <a
+              href="https://youtube.com/redteamvillage"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-red-800 underline decoration-2 transition-colors hover:text-red-900"
+            >
+              Red Team Village
+            </a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Timeline Grid Schedule Section */}
+    <section aria-labelledby="schedule-section-title">
+      <h2
+        id="schedule-section-title"
+        class="mb-10 text-3xl font-bold text-red-800 italic"
+      >
+        RTV Overflow Schedule
+      </h2>
+
+      <div
+        class="flex flex-col gap-10 border-l-2 border-red-800/30 pb-10 sm:ml-4"
+      >
+        {
+          scheduleSlots.map(({ data: item }) => (
+            <div class="group relative pl-2 sm:pl-8">
+              {/* Central Timeline Absolute Node Dot Indicator */}
+              <div class="absolute top-6 -left-2.25 z-20 h-4 w-4 rounded-full border-4 border-white bg-red-800 shadow-sm transition-transform group-hover:scale-110" />
+
+              <div class="flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-all hover:shadow-md md:flex-row">
+                {/* Presenter Avatar Column Block */}
+                {item.image && (
+                  <div class="pointer-events-none flex shrink-0 items-center justify-center gap-4 border-b border-neutral-100 bg-neutral-50 p-6 select-none md:w-auto md:border-r md:border-b-0">
+                    <Image
+                      src={item.image}
+                      alt={`Portrait of presenter ${item.presenter}`}
+                      class="h-24 w-24 rounded-full border-[6px] border-neutral-400 object-cover shadow-sm md:h-32 md:w-32"
+                      loading={item.index < 2 ? "eager" : "lazy"}
+                      fetchpriority={item.index < 2 ? "high" : "auto"}
+                    />
+
+                    {item.image2 && (
+                      <Image
+                        src={item.image2}
+                        alt={`Portrait of co-presenter for: ${item.title}`}
+                        class="h-24 w-24 rounded-full border-[6px] border-neutral-400 object-cover shadow-sm md:h-32 md:w-32"
+                        loading={item.index < 2 ? "eager" : "lazy"}
+                        fetchpriority={item.index < 2 ? "high" : "auto"}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {/* Meta Description Text Blocks */}
+                <div class="flex grow flex-col justify-center p-6">
+                  <div class="mb-2">
+                    <span class="rounded-full border border-red-100 bg-red-50 px-3 py-1 text-sm font-bold tracking-wider text-red-800 uppercase">
+                      {item.datetime}
+                    </span>
+                  </div>
+
+                  <h3 class="mb-1 text-2xl leading-tight font-bold text-neutral-900">
+                    {item.title}
+                  </h3>
+                  <p class="mb-4 font-mono font-bold text-red-800">
+                    ~ # {item.presenter}
+                  </p>
+
+                  <div class="text-base leading-relaxed text-neutral-600">
+                    {item.description}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</BaseLayout>

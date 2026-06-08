@@ -1,0 +1,52 @@
+---
+import "../styles/global.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import HeaderNavigation from "../components/HeaderNavigation.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "RTV Website" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Saira", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-neutral-900 font-sans text-white">
+    <div class="flex min-h-screen flex-col">
+      <div class="container mx-auto max-w-7xl">
+        <HeaderNavigation />
+
+        <div class="grow bg-neutral-900" id="content">
+          <div class="bg-white text-neutral-900" style="margin-top: -1px;">
+            <slot />
+          </div>
+        </div>
+
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>

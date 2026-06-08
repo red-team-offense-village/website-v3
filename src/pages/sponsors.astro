@@ -1,0 +1,200 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Query the validated Content Layer data collection
+const sponsors = await getCollection("sponsors");
+sponsors.sort((a, b) => a.data.index - b.data.index);
+
+// Map platform strings to strict FontAwesome 7 icon classes
+const socialIconMap: Record<string, string> = {
+  X: "fab fa-x-twitter",
+  LinkedIn: "fab fa-linkedin",
+  GitHub: "fab fa-github",
+  Facebook: "fab fa-facebook",
+  YouTube: "fab fa-youtube",
+  Instagram: "fab fa-instagram",
+  Discord: "fab fa-discord",
+  Twitch: "fab fa-twitch",
+};
+---
+
+<BaseLayout title="Sponsors | Red Team Village">
+  <Banner title="Sponsors" />
+
+  <div class="container mx-auto max-w-6xl bg-white px-4 py-4 text-neutral-900">
+    <section class="mb-8 px-4 py-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="rounded-lg bg-red-800 p-8 text-white shadow-lg">
+          <h2 class="mb-6 text-center text-3xl font-bold">Our Sponsors</h2>
+          <p class="mx-auto max-w-4xl text-center text-lg leading-relaxed">
+            We thank our sponsors for supporting Red Team Village and making our
+            mission possible. Your backing allows us to provide learning
+            opportunities, develop skills, and build connections among security
+            professionals worldwide. Through your support, we deliver education,
+            hands-on experiences, and collaborative environments that strengthen
+            our industry by developing offensive security talent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {
+      sponsors.map(({ data: sponsor }) => (
+        <section class="mb-24 border-b border-gray-200 pb-8 last:border-0">
+          <div class="mx-auto mb-12 flex max-w-5xl flex-col items-start gap-8 text-left md:flex-row">
+            {/* Left Column: Sizable Media Frame RESIZE TIP: Change 'md:w-64' below
+            to 'md:w-48', 'md:w-56', etc. to easily scale the logo! You should
+            also adjust the height of the Image so Astro processes the file
+            efficiently if the logo is large. */}
+            {sponsor.image && (
+              <div class="pointer-events-none flex aspect-square w-full shrink-0 items-center justify-center rounded-xl border border-neutral-900 bg-black p-4 shadow-md select-none md:w-40">
+                <Image
+                  src={sponsor.image}
+                  alt={`Official logo for ${sponsor.name}`}
+                  class="max-h-full max-w-full object-contain"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </div>
+            )}
+            {/* Right Column: Dynamic Text Metadata Area */}
+            <div class="flex grow flex-col justify-start gap-2.5">
+              <h2 class="text-3xl font-extrabold tracking-tight text-neutral-800 sm:text-4xl">
+                {sponsor.name}
+              </h2>
+
+              {/* Event Metadata Badges Row */}
+              <div class="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-lg font-semibold text-red-800">
+                <span class="tracking-wide">{sponsor.dates}</span>
+                {sponsor.location && (
+                  <>
+                    <span
+                      class="hidden font-normal text-neutral-300 sm:inline"
+                      aria-hidden="true"
+                    >
+                      •
+                    </span>
+                    <span class="rounded-full border border-neutral-200 bg-neutral-100 px-3 py-0.5 text-sm font-medium text-neutral-600">
+                      {sponsor.location}
+                    </span>
+                  </>
+                )}
+              </div>
+
+              {/* Event Description Text */}
+              <p class="mt-2 text-lg leading-relaxed text-neutral-600">
+                {sponsor.description}
+              </p>
+            </div>
+          </div>
+
+          <div class="mx-auto max-w-7xl">
+            {sponsor.levels &&
+              sponsor.levels.map(
+                (level) =>
+                  level.sponsors &&
+                  level.sponsors.length > 0 && (
+                    <div class="mb-16">
+                      <h3 class="mb-8 text-center text-3xl font-bold text-gray-800">
+                        {level.name}{" "}
+                        {level.sponsors.length === 1 ? "Sponsor" : "Sponsors"}
+                      </h3>
+
+                      <div class="mx-auto flex max-w-6xl flex-wrap justify-center gap-8">
+                        {level.sponsors.map((sponsor) => (
+                          <div class="flex w-full flex-col overflow-hidden rounded-lg border-[3px] border-red-800 bg-white text-left shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl md:w-3/4 lg:w-3/4">
+                            <div class="flex items-center justify-center bg-neutral-500 p-4">
+                              <a
+                                href={sponsor.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex h-full w-full items-center justify-center"
+                                aria-label={`Visit the official website for ${sponsor.name}`}
+                              >
+                                <Image
+                                  src={sponsor.logo}
+                                  alt={`${sponsor.name} official logomark`}
+                                  class="h-30 w-auto object-contain"
+                                />
+                              </a>
+                            </div>
+
+                            <div class="flex grow flex-col p-6 text-center">
+                              <h4 class="mb-3 text-2xl font-bold text-red-800">
+                                {sponsor.name}
+                              </h4>
+                              <p class="mb-6 grow text-lg leading-relaxed text-gray-600">
+                                {sponsor.description}
+                              </p>
+
+                              <div class="text-center">
+                                <a
+                                  href={sponsor.website}
+                                  class="inline-block rounded-md bg-red-800 px-8 py-3 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:bg-red-900 hover:shadow-xl"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={`Visit ${sponsor.name} website`}
+                                >
+                                  Visit Website{" "}
+                                  <i class="fas fa-external-link-alt ml-2 text-sm" />
+                                </a>
+                              </div>
+
+                              {sponsor.socials &&
+                                sponsor.socials.length > 0 && (
+                                  <div class="mt-6 flex justify-center gap-6">
+                                    {sponsor.socials.map((social) => {
+                                      const iconClass =
+                                        socialIconMap[social.name] ||
+                                        "fas fa-link";
+                                      return (
+                                        <a
+                                          href={social.url}
+                                          class="text-red-800 transition-colors duration-300 hover:text-red-900"
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          aria-label={`${sponsor.name} on ${social.name}`}
+                                          title={social.name}
+                                        >
+                                          <i class={`${iconClass} text-3xl`} />
+                                        </a>
+                                      );
+                                    })}
+                                  </div>
+                                )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ),
+              )}
+          </div>
+        </section>
+      ))
+    }
+
+    <section class="mb-8 px-8">
+      <div class="rounded-lg bg-red-800 p-8 text-center text-white shadow-md">
+        <h2 class="relative mb-6 inline-block text-3xl font-bold">
+          <span
+            class="relative pb-2 after:absolute after:bottom-0 after:left-1/4 after:h-0.5 after:w-1/2 after:bg-white after:content-['']"
+            >Become a Sponsor</span
+          >
+        </h2>
+        <p class="mx-auto mb-6 max-w-2xl text-lg">
+          Interested in sponsoring Red Team Village?<br />Reach out to learn
+          about our sponsorship opportunities and benefits.
+        </p>
+        <a
+          href="mailto:sponsors@redteamvillage.io"
+          class="inline-block rounded-md bg-white px-6 py-3 font-medium text-black transition-colors duration-300 hover:bg-gray-100"
+          >Contact Us</a
+        >
+      </div>
+    </section>
+  </div>
+</BaseLayout>

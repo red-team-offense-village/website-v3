@@ -1,0 +1,94 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { Image } from "astro:assets";
+
+// Fetch entries and sort them exactly as they appear in the JSON array
+const teamMembers = await getCollection("team");
+teamMembers.sort((a, b) => a.data.index - b.data.index);
+---
+
+<BaseLayout title="Team | Red Team Village">
+  <Banner title="Team" />
+
+  <article class="post mx-auto max-w-400 bg-white py-12">
+    <div class="mx-auto grid max-w-300 grid-cols-1 gap-8 p-8 md:grid-cols-3">
+      {
+        teamMembers.map((member) => (
+          <div class="overflow-hidden rounded-xl border border-neutral-200 bg-red-800 text-white shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex justify-center p-6">
+              <Image
+                class="h-48 w-48 rounded-xl object-cover"
+                src={member.data.image}
+                alt={`Portrait of ${member.data.name}`}
+                width={240}
+                height={240}
+                loading={member.data.index < 9 ? "eager" : "lazy"}
+                fetchpriority={member.data.index < 9 ? "high" : "auto"}
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="m-0 text-2xl font-bold">{member.data.name}</h3>
+
+              {member.data.handle && (
+                <h4 class="my-2 text-lg text-white/90 italic">
+                  {member.data.handle}
+                </h4>
+              )}
+
+              <h4 class="my-2 text-lg text-white/90">{member.data.role}</h4>
+
+              <div class="social-links mt-4 flex justify-center gap-4">
+                {member.data.linkedin && (
+                  <a
+                    href={member.data.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white transition-colors hover:text-white/80"
+                    aria-label={`${member.data.name}'s LinkedIn Profile`}
+                  >
+                    <i class="fab fa-linkedin text-2xl" />
+                  </a>
+                )}
+                {member.data.instagram && (
+                  <a
+                    href={member.data.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white transition-colors hover:text-white/80"
+                    aria-label={`${member.data.name}'s Instagram Profile`}
+                  >
+                    <i class="fab fa-instagram text-2xl" />
+                  </a>
+                )}
+                {member.data.twitter && (
+                  <a
+                    href={member.data.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white transition-colors hover:text-white/80"
+                    aria-label={`${member.data.name}'s X (Twitter) Profile`}
+                  >
+                    <i class="fab fa-twitter text-2xl" />
+                  </a>
+                )}
+                {member.data.mastodon && (
+                  <a
+                    href={member.data.mastodon}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white transition-colors hover:text-white/80"
+                    aria-label={`${member.data.name}'s Mastodon Profile`}
+                  >
+                    <i class="fab fa-mastodon text-2xl" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</BaseLayout>

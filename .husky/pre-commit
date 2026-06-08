@@ -1,0 +1,3 @@
+node .husky/check-branch.js
+npx lint-staged
+npx gitleaks-secret-scanner

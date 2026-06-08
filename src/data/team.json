@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Mike Lisi",
+    "handle": "@mikehacksthings",
+    "role": "President",
+    "image": "mike-240x240.png",
+    "linkedin": "https://www.linkedin.com/in/mikelisi/",
+    "twitter": "https://x.com/mikehacksthings"
+  },
+  {
+    "name": "Danielle Sink",
+    "handle": "@ds1nk",
+    "role": "Vice President",
+    "image": "dsink-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/dssink/"
+  },
+  {
+    "name": "Billy Giles",
+    "role": "Treasurer",
+    "image": "billy-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/wrgiles/"
+  },
+  {
+    "name": "James Owens",
+    "handle": "@j0wns",
+    "role": "Secretary",
+    "image": "james-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/%F0%9F%92%A1james-owens-9196b11b6/",
+    "twitter": "https://x.com/jamesowens"
+  },
+  {
+    "name": "Matthew Nickerson",
+    "handle": "@turbo",
+    "role": "Director of Workshops",
+    "image": "matthew-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/mwnickerson/",
+    "twitter": "https://x.com/turbo_sec"
+  },
+  {
+    "name": "Krista Theodore",
+    "handle": "@InfoSecOprah",
+    "role": "Director of Marketing",
+    "image": "krista-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/kristamtheodore/",
+    "twitter": "https://x.com/@InfoSecOprah"
+  },
+  {
+    "name": "Brian Sak",
+    "handle": "@briansak",
+    "role": "Director of Logistics",
+    "image": "brian-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/briansak/",
+    "twitter": "https://x.com/@briansak"
+  },
+  {
+    "name": "Filipi Pires",
+    "handle": "@FilipiPires",
+    "role": "Director of Sponsors",
+    "image": "filipi-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/filipipires/",
+    "instagram": "https://www.instagram.com/filipipires.sec"
+  },
+  {
+    "name": "Ryen Nelsen",
+    "handle": "@Killroy7777",
+    "role": "Director of Volunteers",
+    "image": "ryen-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/ryennelsen/",
+    "mastodon": "https://gts.hackers.exchange/@ryen"
+  },
+  {
+    "name": "Bryce Zuccaro",
+    "handle": "@c4ch3c4d3",
+    "role": "Multimedia Content Producer",
+    "image": "bryce-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/brycezuccaro/",
+    "twitter": "https://x.com/c4ch3c4d3"
+  },
+  {
+    "name": "Cory Wolff",
+    "handle": "@cwolff411",
+    "role": "Workshop Coordinator",
+    "image": "cory-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/corywolff/",
+    "twitter": "https://x.com/cwolff411"
+  },
+  {
+    "name": "Lee McWhorter",
+    "handle": "@tleemcjr",
+    "role": "Swag Coordinator",
+    "image": "lee-240x240.png",
+    "linkedin": "https://www.linkedin.com/in/lee-mcwhorter/",
+    "twitter": "https://twitter.com/tleemcjr"
+  },
+  {
+    "name": "Austin Cundiff",
+    "handle": "@sysdum",
+    "role": "Core Staff",
+    "image": "austin-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/austin-cundiff-7b015811a/",
+    "twitter": "https://x.com/@sysdum"
+  },
+  {
+    "name": "Greg Oldham",
+    "handle": "@Hax4Coffee",
+    "role": "Core Staff",
+    "image": "greg-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/greg-oldham-cfis/",
+    "twitter": "https://x.com/@hax4coffee"
+  },
+  {
+    "name": "Jason Haddix",
+    "handle": "@JHaddix",
+    "role": "Core Staff",
+    "image": "jason-240x240.png",
+    "linkedin": "https://www.linkedin.com/in/jhaddix/",
+    "twitter": "https://x.com/@JHaddix"
+  },
+  {
+    "name": "Jon Kim",
+    "handle": "@j0nk1m",
+    "role": "Core Staff",
+    "image": "jon-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/jonathanskim/",
+    "twitter": "https://x.com/@j0nk1m"
+  },
+  {
+    "name": "Michael Donley",
+    "handle": "@th3d00rman",
+    "role": "Core Staff",
+    "image": "michael-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/michael-donley-red-team-pentester-educator/",
+    "twitter": "https://x.com/@th3d00rman"
+  },
+  {
+    "name": "Nate Sanders",
+    "handle": "@mauvehed",
+    "role": "Core Staff",
+    "image": "nate-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/sandersn/",
+    "twitter": "https://defcon.social/@mauvehed"
+  },
+  {
+    "name": "Troy Fridley",
+    "handle": "",
+    "role": "Core Staff",
+    "image": "troy-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/troy-fridley-54a9252/"
+  },
+  {
+    "name": "Omar Santos",
+    "handle": "@Ωr",
+    "role": "Village Advisor",
+    "image": "omar-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/santosomar/",
+    "twitter": "https://x.com/santosomar"
+  },
+  {
+    "name": "Barrett Darnell",
+    "handle": "@pwneip",
+    "role": "Village Advisor",
+    "image": "barret-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/barrettdarnell/",
+    "twitter": "https://x.com/pwneip"
+  },
+  {
+    "name": "Savannah Lazzara",
+    "handle": "@lazzslayer",
+    "role": "Village Advisor",
+    "image": "savannah-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/savannahlazzara/",
+    "twitter": "https://x.com/lazzslayer"
+  },
+  {
+    "name": "Wes Thurner",
+    "handle": "@nopresearcher",
+    "role": "Village Advisor",
+    "image": "wes-240x240.jpg",
+    "linkedin": "https://www.linkedin.com/in/wesleythurner/",
+    "twitter": "https://x.com/nopresearcher"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Local Large Language Models",
+    "date": "May 9, 2026",
+    "presenter": "Bryce Zuccaro",
+    "description": "Workshop Description: A medium depth overview of how to run an LLM on your own hardware. A review of the requirements, key concepts, strategies for success, and sobering pitfalls on what can and can't be done with Nvidia & Apple hardware on any budget.",
+    "tags": ["AI", "SelfHosted", "Workshop"],
+    "watchUrl": "https://www.youtube.com/watch?v=L8bYnzq4JWo",
+    "image": "rtv-cron-0x5.png"
+  },
+  {
+    "title": "C2 for Red Team: A Practical Introduction with Sliver",
+    "date": "March 27, 2026",
+    "presenter": "Maor Tal",
+    "description": "In modern red team engagements, Command and Control (C2) frameworks are essential for managing post-exploitation activities and maintaining persistent access. Mastering C2 operations is now a core skill for any red teamer.\n\nIn this beginner-friendly workshop, Maor will guide participants through setting up, operating, and designing a red team operation using Sliver, a powerful and open-source C2 framework gaining wide adoption in the offensive security community. Whether you're new to C2 or seeking practical experience with Silver, this session offers a solid foundation to get started.",
+    "tags": ["CommandAndControl", "Sliver", "Workshop"],
+    "watchUrl": "https://www.youtube.com/live/qRYYJhaRC6U",
+    "image": "rtv-cron-0x4.png"
+  },
+  {
+    "title": "Introduction to Ghidra and Version Tracking",
+    "date": "May 29, 2025",
+    "presenter": "Mike Bell",
+    "description": "For the workshop, Mike will demonstrate basic Ghidra functionality such as importing programs, launching tools, and using the standard windows and plugins. Next he will explain the design and use of the Version Tracking tool, and how it can help your workflow understanding functionality while analyzing upgrades to software. Finally, time permitting, he will show beginning usage of the BSim capability and how this can be a game changer for discovering lineage of software en masse. Those who tune in are encouraged to ask questions about the application, as Mike will be demonstrating everything live without a net.",
+    "tags": ["Ghidra", "workshop"],
+    "watchUrl": "https://www.youtube.com/watch?v=6ou3Qcwuao8",
+    "image": "rtv-cron-0x3.png"
+  },
+  {
+    "title": "Systematic Malware: A Rule-Based Approach to Creating Payloads",
+    "date": "April 24, 2025",
+    "presenter": "Kevin Clark & Skyler Knecht",
+    "description": "Creating evasive payloads in the modern EDR landscape is less about knowing what to do, and more about learning what not to do. Although EDR has moved away from relying on static binary signatures, rule-based detections are still in play. Every step of payload execution is an opportunity to be detected. In this workshop, we showcase step-by-step instructions on how to craft evasive payloads. Attendees will have a better understanding of how to craft complex payloads and learn about how payloads are executed, from process creation to initial callback.",
+    "tags": ["malware", "payloads", "EDR"],
+    "watchUrl": "https://www.youtube.com/watch?v=-xStGweK9KI",
+    "image": "rtv-cron-0x2.png"
+  },
+  {
+    "title": "Influence_Ops: Tactical Pretexting",
+    "date": "March 27, 2025",
+    "presenter": "Jeff Tomkiewicz",
+    "description": "Pretexting is one of the most powerful and versatile tools in the social engineer’s arsenal. Whether used in red teaming, penetration testing, or adversary simulation, a well-crafted pretext can bypass even the most hardened security controls—not through technical exploits, but by leveraging trust, authority, and human psychology.\n\nIn this two-hour interactive workshop, we will dive deep into the art and science of pretexting, exploring its historical roots, ethical considerations, and real-world applications in offensive security. Participants will gain hands-on experience in developing layered personas, crafting believable scenarios, and executing pretexts across multiple attack surfaces, including phishing campaigns, vishing (voice phishing), and physical infiltration techniques.\n\n[Workshop Materials](https://github.com/theGh0stfaceKiller/InfluenceOps_RTV_VM)",
+    "tags": ["red team", "human hacking", "social engineering"],
+    "watchUrl": "https://www.youtube.com/watch?v=vlow4qZSOSE",
+    "image": "rtv-cron-0x1.png"
+  }
+]

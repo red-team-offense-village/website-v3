@@ -1,0 +1,33 @@
+[
+  {
+    "id": "rtv-team",
+    "name": "<i class='fas fa-users'></i> TEAM",
+    "url": "team/"
+  },
+  {
+    "id": "sponsors",
+    "name": "<i class='fas fa-handshake'></i> SPONSORS",
+    "url": "sponsors/"
+  },
+  {
+    "id": "cron",
+    "name": "<i class='fas fa-clock'></i> RTV CRON",
+    "url": "rtv-cron/"
+  },
+  {
+    "id": "overflow",
+    "name": "<i class='fas fa-video'></i> RTV OVERFLOW",
+    "url": "rtv-overflow/"
+  },
+  {
+    "id": "events",
+    "name": "<i class='fas fa-calendar'></i> EVENTS",
+    "url": "events/"
+  },
+  {
+    "id": "swag",
+    "name": "<i class='fas fa-shopping-bag'></i> SWAG",
+    "url": "http://redteamvillage.promostore.com/",
+    "target": "_blank"
+  }
+]

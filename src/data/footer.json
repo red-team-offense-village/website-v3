@@ -1,0 +1,32 @@
+[
+  {
+    "id": "discord",
+    "name": "<i class='fab fa-discord fa-lg'></i>",
+    "url": "https://discord.gg/redteamvillage",
+    "target": "_blank"
+  },
+  {
+    "id": "twitter",
+    "name": "<i class='fab fa-twitter fa-lg'></i>",
+    "url": "https://x.com/redteamvillage_",
+    "target": "_blank"
+  },
+  {
+    "id": "youtube",
+    "name": "<i class='fab fa-youtube fa-lg'></i>",
+    "url": "https://www.youtube.com/redteamvillage",
+    "target": "_blank"
+  },
+  {
+    "id": "instagram",
+    "name": "<i class='fab fa-instagram fa-lg'></i>",
+    "url": "https://www.instagram.com/theredteamvillage/",
+    "target": "_blank"
+  },
+  {
+    "id": "bluesky",
+    "name": "<i class='fab fa-bluesky fa-lg'></i>",
+    "url": "https://bsky.app/profile/theredteamvillage.bsky.social",
+    "target": "_blank"
+  }
+]

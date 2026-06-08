@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Query the validated events collection data directly from the Content Layer
+const scheduledEvents = await getCollection("events");
+scheduledEvents.sort((a, b) => a.data.index - b.data.index);
+---
+
+<BaseLayout title="Upcoming Events | Red Team Village">
+  <Banner title="Events" />
+
+  <div class="container mx-auto max-w-6xl bg-white px-4 py-12 text-neutral-900">
+    <section aria-labelledby="upcoming-events-title">
+      <div
+        class="rounded-lg border-2 border-red-800 bg-white p-2 shadow-lg md:p-4"
+      >
+        {/* Core Header Section */}
+        <div class="mb-8 flex items-center gap-4 text-red-800">
+          <i class="fas fa-calendar-alt text-3xl" aria-hidden="true"></i>
+          <h2
+            id="upcoming-events-title"
+            class="text-3xl font-bold text-neutral-800"
+          >
+            Events
+          </h2>
+        </div>
+
+        <p class="mb-8 text-lg leading-relaxed text-neutral-700">
+          Join Red Team Village at these upcoming events. From workshops and
+          training sessions to competitions and conferences, we offer
+          opportunities for security professionals of all levels to enhance
+          their skills and connect with the community.
+        </p>
+
+        {/* Events Feed Container */}
+        <div>
+          {
+            scheduledEvents.map(({ data: event }) => (
+              <div class="mt-4 overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 shadow-md transition-all duration-300 hover:shadow-lg">
+                {/* Event Card Header Banner */}
+                <div class="bg-red-800 p-4 text-white">
+                  <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+                    <h3 class="text-xl font-bold tracking-wide">
+                      {event.title}
+                    </h3>
+                    <div class="flex w-fit shrink-0 items-center gap-2 rounded-full bg-white px-4 py-1 text-sm font-semibold text-neutral-900">
+                      <i
+                        class="far fa-calendar-alt text-red-800"
+                        aria-hidden="true"
+                      />
+                      <span>{event.dateRange}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Event Main Content Grid */}
+                <div class="p-2 pt-6 sm:p-4">
+                  <div class="flex flex-col gap-8 md:flex-row">
+                    {/* Event Metadata and Body */}
+                    <div class="grow">
+                      {/* Dynamic Tags Grid */}
+                      {event.tags.length > 0 && (
+                        <div
+                          class="mb-4 flex flex-wrap gap-2"
+                          aria-label="Event category classifications"
+                        >
+                          {event.tags.map((tag) => (
+                            <span class="rounded-full bg-neutral-200 px-3 py-1 text-sm font-medium text-neutral-800">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Time and Location Blocks */}
+                      <div class="mb-4 flex flex-col gap-6 border-b border-neutral-200 pb-4 text-neutral-700 sm:flex-row sm:items-center">
+                        <div class="flex items-center">
+                          <i
+                            class="far fa-clock mr-2 text-lg text-red-800"
+                            aria-hidden="true"
+                          />
+                          <span class="font-medium">{event.times}</span>
+                        </div>
+
+                        <div class="flex items-center">
+                          <i
+                            class="fas fa-map-marker-alt mr-2 text-lg text-red-800"
+                            aria-hidden="true"
+                          />
+                          <span class="font-medium">{event.location}</span>
+                        </div>
+                      </div>
+
+                      {/* Description Panel */}
+                      <p class="my-4 text-lg leading-relaxed text-neutral-700">
+                        {event.description}
+                      </p>
+
+                      {/* Call To Action Buttons */}
+                      {event.link && (
+                        <div class="mt-6">
+                          <a
+                            href={event.link.url}
+                            class="inline-block rounded-md bg-red-800 px-6 py-3 text-sm font-bold text-white shadow-sm shadow-red-900/10 transition-colors duration-200 hover:bg-red-900"
+                            target={event.link.external ? "_blank" : undefined}
+                            rel={
+                              event.link.external
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                            aria-label={`${event.link.text} regarding ${event.title}`}
+                          >
+                            {event.link.text}
+                            {event.link.external && (
+                              <i
+                                class="fas fa-external-link-alt ml-2 text-xs"
+                                aria-hidden="true"
+                              />
+                            )}
+                          </a>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Right-aligned Graphic Column */}
+                    {event.image && (
+                      <div class="pointer-events-none shrink-0 select-none md:w-1/3">
+                        <Image
+                          src={event.image.src}
+                          alt={
+                            event.image.alt ||
+                            `Promotional banner artwork for ${event.title}`
+                          }
+                          loading={event.index < 2 ? "eager" : "lazy"}
+                          fetchpriority={event.index < 2 ? "high" : "auto"}
+                          class="h-auto w-full rounded-lg border border-neutral-200 object-cover shadow-md"
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

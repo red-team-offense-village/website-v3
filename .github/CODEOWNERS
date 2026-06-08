@@ -1,0 +1,16 @@
+# -----------------------------------------------------------------
+# Global Owners
+# -----------------------------------------------------------------
+# Default fallback for any file not explicitly matched below
+*                     @mikehacksthings @rtv-ryen
+
+# -----------------------------------------------------------------
+# Repository Tooling & Infrastructure
+# -----------------------------------------------------------------
+/.github/             @mauvehed @rtv-ryen
+/.husky/              @mauvehed @rtv-ryen
+/.npmrc               @mauvehed @rtv-ryen
+/.prettierrc.mjs      @mauvehed @rtv-ryen
+/astro.config.mjs     @mauvehed @rtv-ryen
+/package.json         @mauvehed @rtv-ryen
+/package-lock.json    @mauvehed @rtv-ryen

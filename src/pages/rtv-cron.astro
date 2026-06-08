@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Query the type-safe Content Layer for our monthly episode tracking
+const episodes = await getCollection("rtv-cron");
+episodes.sort((a, b) => a.data.index - b.data.index);
+---
+
+<BaseLayout title="RTV Cron | Red Team Village">
+  <Banner title="RTV Cron" />
+
+  <div class="container mx-auto max-w-6xl bg-white px-4 py-12 text-neutral-900">
+    {/* Informational Intro Block */}
+    <section class="mb-12" aria-labelledby="intro-heading">
+      <h2 id="intro-heading" class="mb-4 text-3xl font-bold text-red-800">
+        What is RTV Cron?
+      </h2>
+      <p class="mb-8 text-lg leading-relaxed text-neutral-700">
+        Join us for RTV Cron, our monthly livestream happening on the last
+        Thursday of each month. During each session we'll have a hands-on
+        workshop where you can see the tools and techniques in action, catch
+        updates on what's new with RTV, as well as other helpful content. It's a
+        great chance to get your questions answered in the live chat and meet
+        others in the community. Can't make it? No problem – we post the
+        recordings so you can catch up when it works for you. Each stream
+        usually runs about an hour to an hour and a half.
+      </p>
+
+      <h2 class="mb-4 text-3xl font-bold text-red-800">Where can I watch?</h2>
+      <p class="mb-8 text-lg text-neutral-700">
+        The stream is hosted on our YouTube channel:
+        <a
+          href="https://youtube.com/redteamvillage"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-red-800 underline decoration-2 transition-colors hover:text-red-900"
+        >
+          Red Team Village
+        </a>.
+      </p>
+    </section>
+
+    {/* Episodes Feed Container */}
+    <section aria-labelledby="episodes-heading">
+      <h2
+        id="episodes-heading"
+        class="mb-6 border-b border-neutral-200 pb-2 text-3xl font-bold text-red-800"
+      >
+        RTV Cron Episodes
+      </h2>
+
+      <div class="grid grid-cols-1 gap-8">
+        {
+          episodes.map(({ data: episode }) => (
+            <div class="rounded-lg border-2 border-red-800 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl">
+              <div class="flex h-full flex-col">
+                {/* Visual Thumbnail Box */}
+                <div class="pointer-events-none relative mb-4 overflow-hidden rounded-lg bg-red-800 select-none">
+                  <div class="flex items-center justify-center">
+                    <Image
+                      src={episode.image}
+                      alt={`Video thumbnail placeholder for ${episode.title}`}
+                      class="h-auto w-full object-cover"
+                      loading={episode.index < 2 ? "eager" : "lazy"}
+                      fetchpriority={episode.index < 2 ? "high" : "auto"}
+                    />
+                  </div>
+                  {/* Structural background overlay dividers replacing raw width fractionals */}
+                  <div class="absolute inset-y-0 left-0 w-12 bg-red-900/10" />
+                  <div class="absolute inset-y-0 right-0 w-12 bg-red-900/10" />
+                </div>
+
+                <h3 class="mb-3 text-2xl font-bold text-red-800">
+                  {episode.title}
+                </h3>
+
+                {/* Metadata Row Grid */}
+                <div class="mb-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-100 bg-neutral-50 p-4 sm:grid-cols-2">
+                  <div>
+                    <span class="block text-sm font-bold tracking-wider text-neutral-500 uppercase">
+                      Presented by
+                    </span>
+                    <span class="font-medium text-neutral-800">
+                      {episode.presenter}
+                    </span>
+                  </div>
+                  <div>
+                    <span class="block text-sm font-bold tracking-wider text-neutral-500 uppercase">
+                      Air Date
+                    </span>
+                    <span class="font-medium text-neutral-800">
+                      {episode.date}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Description Space */}
+                <div
+                  class="mb-4 grow leading-relaxed text-neutral-700 [&_a]:underline [&_p]:mb-2"
+                  set:html={episode.html}
+                />
+
+                {/* Dynamic Tags Area */}
+                {episode.tags.length > 0 && (
+                  <div
+                    class="mb-4 flex flex-wrap gap-2"
+                    aria-label="Episode topics"
+                  >
+                    {episode.tags.map((tag) => (
+                      <span class="rounded-full border border-red-900 bg-red-800 px-3 py-1 text-xs font-semibold tracking-wider text-white uppercase shadow-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Optional Episode Sponsorship Panel */}
+                {episode.sponsor && (
+                  <div class="mb-6 flex items-center justify-between rounded border-l-4 border-red-700 bg-neutral-900 p-3 text-white">
+                    <span class="text-sm font-semibold tracking-wide text-neutral-400">
+                      Episode Sponsored By:
+                    </span>
+                    <span class="rounded bg-red-800 px-3 py-1 text-sm font-bold shadow-sm">
+                      {episode.sponsor}
+                    </span>
+                  </div>
+                )}
+
+                {/* Actionable Link Anchor */}
+                <a
+                  href={episode.watchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block rounded bg-red-800 px-6 py-3 text-center font-bold text-white shadow shadow-red-900/20 transition-colors hover:bg-red-900"
+                  aria-label={`Watch video recording for episode: ${episode.title}`}
+                >
+                  Watch Episode{" "}
+                  <i
+                    class="fas fa-external-link-alt ml-2 text-sm"
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</BaseLayout>
