@@ -1,0 +1,148 @@
+---
+import { getCollection } from "astro:content";
+
+const mainNav = await getCollection("header");
+mainNav.sort((a, b) => a.data.index - b.data.index);
+
+const siteTitle = "Red Team Village";
+const siteTitleAbbreviated = "RTV";
+---
+
+<header class="border-b border-neutral-800 bg-neutral-900">
+  <div class="container mx-auto max-w-7xl px-4">
+    <nav class="py-4" aria-label="Main Navigation">
+      {/* Desktop Navigation View */}
+      <div class="hidden lg:flex lg:items-center lg:justify-between">
+        <div class="flex shrink-0 items-center text-white">
+          <a href="/" class="flex items-center gap-3">
+            <img
+              src="/favicon.svg"
+              alt="Red Team Village official insignia"
+              class="h-16 w-auto object-contain"
+              loading="eager"
+              fetchpriority="high"
+              width="64px"
+            />
+            <span
+              class="text-2xl font-extrabold tracking-tight whitespace-nowrap uppercase"
+            >
+              {siteTitle}
+            </span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-6 xl:gap-8">
+          {
+            mainNav.map(({ data: item }) => {
+              const href = item.url.startsWith("http")
+                ? item.url
+                : `/${item.url}`;
+              const isExternal =
+                item.target === "_blank" || href.startsWith("http");
+
+              return (
+                <a
+                  href={href}
+                  class="header-nav-link flex flex-col items-center justify-center gap-1.5 text-xs font-bold tracking-wider whitespace-nowrap text-white uppercase no-underline transition-opacity duration-200 hover:opacity-70"
+                  target={item.target || undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  set:html={item.name}
+                />
+              );
+            })
+          }
+        </div>
+      </div>
+
+      {/* Mobile Navigation View */}
+      <div class="lg:hidden">
+        <div class="flex items-center justify-between">
+          <div class="flex shrink-0 items-center text-white">
+            <a href="/" class="flex items-center gap-2">
+              <img
+                src="/favicon.svg"
+                alt="Red Team Village official insignia"
+                class="h-16 w-auto object-contain"
+                loading="eager"
+              />
+              <span
+                class="text-2xl font-bold tracking-tight whitespace-nowrap uppercase min-[26rem]:hidden"
+              >
+                {siteTitleAbbreviated}
+              </span>
+              <span
+                class="hidden text-2xl font-bold tracking-tight whitespace-nowrap uppercase min-[26rem]:block"
+              >
+                {siteTitle}
+              </span>
+            </a>
+          </div>
+
+          <button
+            id="hamburgerbtn"
+            class="flex items-center rounded px-3 py-1 text-white transition-opacity hover:opacity-70 focus:ring-2 focus:ring-red-500 focus:outline-none"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div
+          id="mobileMenu"
+          class="mt-4 hidden rounded-lg border border-neutral-800 bg-neutral-950 p-4 shadow-inner"
+        >
+          {
+            mainNav.map(({ data: item }) => {
+              const href = item.url.startsWith("http")
+                ? item.url
+                : `/${item.url}`;
+              const isExternal =
+                item.target === "_blank" || href.startsWith("http");
+
+              return (
+                <a
+                  href={href}
+                  class="mobile-nav-link block border-b border-neutral-800 py-3 text-lg font-medium text-white no-underline transition-opacity duration-200 last:border-0 hover:opacity-70"
+                  target={item.target || undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  set:html={item.name}
+                />
+              );
+            })
+          }
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.getElementById("hamburgerbtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!isExpanded));
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+</script>
+
+<style is:global>
+  .header-nav-link i {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: -2px;
+  }
+
+  .mobile-nav-link i {
+    margin-right: 0.75rem;
+    display: inline-block;
+    width: 1.75rem;
+    text-align: center;
+    color: #ef4444;
+  }
+</style>

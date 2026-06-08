@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+
+// Query the navigation elements directly from the Content Layer
+const footer = await getCollection("footer");
+footer.sort((a, b) => a.data.index - b.data.index);
+
+const siteTitle = "Red Team Village";
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-red-800 text-white">
+  <div class="container mx-auto max-w-7xl px-4 py-8">
+    <nav
+      class="mb-6 flex flex-wrap justify-center"
+      aria-label="Footer Navigation"
+    >
+      {
+        footer.map(({ data: item }) => {
+          const href = item.url.startsWith("http") ? item.url : `/${item.url}`;
+          const isExternal =
+            item.target === "_blank" || href.startsWith("http");
+
+          return (
+            <a
+              href={href}
+              class="mx-4 my-2 text-xl text-white transition-colors duration-200 hover:text-white/80 sm:mx-12 sm:text-3xl"
+              target={item.target || undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              aria-label={item.ariaLabel}
+              set:html={item.name}
+            />
+          );
+        })
+      }
+    </nav>
+
+    <div class="border-t border-white/10 pt-6 text-center font-medium">
+      <p>
+        &copy; {currentYear}
+        <a
+          href="/"
+          class="transition-colors duration-200 hover:text-neutral-300"
+        >
+          {siteTitle}
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

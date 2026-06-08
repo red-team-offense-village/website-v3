@@ -1,0 +1,111 @@
+{
+  "events": [
+    {
+      "name": "DEF CON 34 (2026)",
+      "dates": "August 6-9, 2026",
+      "location": "Las Vegas, Nevada",
+      "description": "Join us at the world's largest hacker convention where Red Team Village will host workshops, capture the flag competitions, more!",
+      "image": "dc34.avif",
+      "levels": [
+        {
+          "name": "Diamond",
+          "sponsors": [
+            {
+              "name": "OffSec",
+              "description": "OffSec is a global leader in cybersecurity workforce development, empowering individuals and organizations to outsmart cyber threats. Creator of Kali Linux, the ExploitDB vulnerability database, and the OSCP and OSCE certifications, OffSec delivers hands-on, practical training through live labs and enterprise cyber ranges. For over 15 years, OffSec has built the industry-standard in offensive security education, helping security professionals think like adversaries and defend like champions.",
+              "website": "https://www.offsec.com",
+              "logo": "offsec.svg",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/OffensiveSec"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/offensive-security"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/OffensiveSecurity"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Platinum",
+          "sponsors": [
+            {
+              "name": "Amazon",
+              "description": "The Devices and Services Security team builds innovative tools that detect, assess, and mitigate security issues across our consumer device businesses, from Echo to Fire TV to Alexa. We believe the best way to protect our customers is to ensure our products are secure and compliant by default, and our security engineers and developers are working together across the product development life cycle to make that a reality.",
+              "website": "https://amazon.jobs/content/en/teams/amazon-security/devices-services",
+              "logo": "amazon.png"
+            }
+          ]
+        },
+        {
+          "name": "Gold",
+          "sponsors": [
+            {
+              "name": "SpecterOps",
+              "description": "SpecterOps is the creator of BloodHound and a pioneer in Identity Attack Path Management. Drawing on deep expertise in adversary tradecraft, SpecterOps helps organizations identify and eliminate the attack paths that put their most critical assets at risk. BloodHound, the company’s foundational open-source platform, is widely used by defenders and red teams to understand how identity and access can be abused in complex environments. BloodHound Enterprise extends that practice for security teams with capabilities for attack path prioritization, remediation guidance, and reporting to reduce identity risk at scale.",
+              "website": "https://specterops.io/",
+              "logo": "specterops.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/SpecterOps"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/specterops/"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/@specterops"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/specterops.io"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Silver",
+          "sponsors": [
+            {
+              "name": "Fortra",
+              "description": "Fortra is a leading cybersecurity company providing advanced offensive and defensive security solutions across the entire cyber attack chain. Serving over 30,000 customers globally — including 22 of the top 25 Fortune 500 companies — Fortra offers a unified, data-centric security platform covering threat detection, data protection, infrastructure security, and identity governance. With battle-tested technologies and a relentless focus on simplifying security, Fortra helps organizations of all sizes stay ahead of evolving threats.",
+              "website": "https://www.fortra.com",
+              "logo": "fortra.svg",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/fortra"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/fortra"
+                }
+              ]
+            },
+            {
+              "name": "Skillbit",
+              "description": "SkillBit Labs is a continuous learning platform designed to help assess and develop cybersecurity skills through hands-on, bite-sized labs. Whether you're an individual getting started in cybersecurity or an enterprise security manager, SkillBit has the resources for you to help take you / your team to the next level.",
+              "website": "https://skillbit.com/",
+              "logo": "skillbit.svg",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/skillbit-cyber/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

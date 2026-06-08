@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+---
+
+<BaseLayout title="Venue Location | Red Team Village">
+  <Banner title="Venue" />
+
+  <div
+    class="flex min-h-[40vh] items-center bg-white px-4 py-12 text-neutral-900 sm:px-6 lg:px-8"
+  >
+    <div class="mx-auto w-full max-w-7xl">
+      {/* Structural Venue Center Information Block */}
+      <section aria-labelledby="venue-info-title">
+        <div class="mx-auto flex max-w-3xl flex-col gap-4 text-center">
+          <div class="mb-2 text-red-800">
+            <i class="fas fa-map-marked-alt text-5xl" aria-hidden="true"></i>
+          </div>
+          <h2
+            id="venue-info-title"
+            class="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
+          >
+            Location
+          </h2>
+          <p
+            class="rounded-xl border border-neutral-200 bg-neutral-50 p-8 text-xl leading-relaxed text-neutral-600 shadow-inner"
+          >
+            Venue details will be announced soon. Stay tuned for official room
+            allocations and map paths!
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

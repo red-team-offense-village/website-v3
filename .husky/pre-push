@@ -1,0 +1,3 @@
+node .husky/check-branch.js
+npx gitleaks-secret-scanner --diff-mode all
+npx prettier --check

@@ -1,0 +1,502 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+
+// Query the validated content layer directly
+const updatesEntries = await getCollection("updates");
+const allUpdates = updatesEntries.map((entry) => entry.data);
+allUpdates.sort((a, b) => a.index - b.index);
+
+// Separate initial view items from the toggled lazy drawer data
+const initialUpdates = allUpdates.slice(0, 5);
+const remainingUpdates = allUpdates.slice(5);
+const hasMoreUpdates = allUpdates.length > 5;
+---
+
+<BaseLayout title="Home | Red Team Village">
+  <Banner title="Red Team Village" />
+
+  {/* Call for Everything card */}
+  <section
+    class="bg-neutral-100 px-4 py-12 text-neutral-900"
+    aria-labelledby="calls-heading"
+  >
+    <div class="mx-auto max-w-6xl">
+      <div class="rounded-lg border-2 border-red-800 bg-white p-8 shadow-lg">
+        <div class="mb-8 text-center">
+          <div class="mb-6 flex items-center justify-center gap-4 text-red-800">
+            <i class="fas fa-shield-alt text-4xl" aria-hidden="true"></i>
+            <h2
+              id="calls-heading"
+              class="text-4xl font-bold tracking-tight text-neutral-800"
+            >
+              Call for Everything
+            </h2>
+          </div>
+
+          <p
+            class="mx-auto mb-8 max-w-4xl text-xl leading-relaxed text-neutral-700"
+          >
+            The gates are officially open for DEF CON 34. We're looking for the
+            builders, the breakers, and the dedicated volunteers who make the
+            Red Team Village the premier destination for offensive security
+            mastery.
+          </p>
+
+          <div class="grid grid-cols-1 gap-8 text-left lg:grid-cols-3">
+            {/* CFP Card */}
+            <div
+              class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm"
+            >
+              <div>
+                <div class="mb-4 flex items-center gap-3 text-red-800">
+                  <i
+                    class="fas fa-chalkboard-teacher text-2xl"
+                    aria-hidden="true"></i>
+                  <h3 class="text-xl font-bold tracking-tight text-neutral-800">
+                    Call for Presentations
+                  </h3>
+                </div>
+                <p class="mb-4 text-sm leading-relaxed text-neutral-700">
+                  The Red Team Village is looking for researchers and operators
+                  to lead our most interactive year yet! This year, we are
+                  prioritizing <strong class="font-bold text-neutral-900"
+                    >Tactics</strong
+                  >—hands-on, intimate learning sessions—and
+                  <strong class="font-bold text-neutral-900">Workshops</strong> that
+                  pair deep-dive presentations with practical application.
+                </p>
+                <p class="mb-6 text-sm leading-relaxed text-neutral-700">
+                  Showcase your research, give back to the offensive security
+                  community, and help us make this year's village a powerhouse
+                  of tactical knowledge. Submissions are now open!
+                </p>
+              </div>
+              <a
+                href="https://sessionize.com/rtv-at-dc34"
+                class="block w-fit rounded-md bg-red-800 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-900"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Submit a presentation to the DEF CON 34 Call for Papers (opens in a new tab)"
+              >
+                Submit CfP <i
+                  class="fas fa-external-link-alt ml-2 text-xs"
+                  aria-hidden="true"></i>
+              </a>
+            </div>
+
+            {/* Volunteers Card */}
+            <div
+              class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm"
+            >
+              <div>
+                <div class="mb-4 flex items-center gap-3 text-red-800">
+                  <i class="fas fa-users text-2xl" aria-hidden="true"></i>
+                  <h3 class="text-xl font-bold tracking-tight text-neutral-800">
+                    Call for Volunteers
+                  </h3>
+                </div>
+                <p class="mb-4 text-sm leading-relaxed text-neutral-700">
+                  The Village runs on the passion of our community. Volunteering
+                  is the best way to get behind the scenes, network with
+                  industry leaders, and contribute to the offensive security
+                  ecosystem. We have roles for all skill levels, from technical
+                  support to logistics.
+                </p>
+                <p class="mb-6 text-sm leading-relaxed text-neutral-700">
+                  All volunteers receive <strong
+                    class="font-bold text-neutral-900"
+                    >exclusive RTV swag</strong
+                  >, an invite to
+                  <strong class="font-bold text-neutral-900"
+                    >the legendary RTV party</strong
+                  >, and our sincere appreciation!
+                </p>
+              </div>
+              <a
+                href="https://forms.gle/qbVorEHHoYA9p8D38"
+                class="block w-fit rounded-md bg-red-800 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-900"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Apply to become a Red Team Village volunteer (opens in a new tab)"
+              >
+                Submit CfV <i
+                  class="fas fa-external-link-alt ml-2 text-xs"
+                  aria-hidden="true"></i>
+              </a>
+            </div>
+
+            {/* Sponsors Card */}
+            <div
+              class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm"
+            >
+              <div>
+                <div class="mb-4 flex items-center gap-3 text-red-800">
+                  <i class="fas fa-handshake text-2xl" aria-hidden="true"></i>
+                  <h3 class="text-xl font-bold tracking-tight text-neutral-800">
+                    Call for Sponsors
+                  </h3>
+                </div>
+                <p class="mb-4 text-sm leading-relaxed text-neutral-700">
+                  We are looking for partners to help fuel our educational
+                  mission—delivering the practical, hands-on learning that
+                  bridges the gap between theory and the real world. Sponsoring
+                  RTV is a commitment to the growth of the craft.
+                </p>
+                <p class="mb-6 text-sm leading-relaxed text-neutral-700">
+                  As a <strong class="font-bold text-neutral-900"
+                    >501(c)(3)</strong
+                  > nonprofit, your support keeps training accessible while giving
+                  your brand direct, vital engagement with over <strong
+                    class="font-bold text-neutral-900"
+                    >60,000+ security professionals</strong
+                  >.
+                </p>
+              </div>
+              <a
+                href="https://drive.google.com/file/d/1344CxfPdZaCgOZqElDNIule9rLe8djVY/view?usp=sharing"
+                class="block w-fit rounded-md bg-red-800 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-900"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download the official Red Team Village sponsorship prospectus PDF (opens in a new tab)"
+              >
+                RTV Prospectus <i
+                  class="fas fa-external-link-alt ml-2 text-xs"
+                  aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Updates Feed */}
+  <section
+    class="bg-white px-4 py-12 text-neutral-900"
+    aria-labelledby="updates-heading"
+  >
+    <div class="mx-auto max-w-6xl">
+      <div class="rounded-lg border-2 border-red-800 bg-white p-8 shadow-lg">
+        <div class="mb-8 flex items-center gap-4 text-red-800">
+          <i class="fas fa-newspaper text-3xl" aria-hidden="true"></i>
+          <h3
+            id="updates-heading"
+            class="text-2xl font-bold tracking-tight text-neutral-800"
+          >
+            Latest Updates
+          </h3>
+        </div>
+
+        <div class="flex flex-col" id="updates-container">
+          {
+            initialUpdates.map((update) => (
+              <div class="border-b border-neutral-200 py-6 text-left last:border-0">
+                <div class="flex flex-col items-start gap-6 md:flex-row">
+                  {update.image && (
+                    <div class="pointer-events-none flex aspect-video w-full shrink-0 items-center justify-center rounded-lg p-3 select-none md:aspect-auto md:h-48 md:w-56">
+                      <Image
+                        src={update.image.src}
+                        alt={update.image.alt}
+                        class="max-h-full max-w-full rounded object-contain"
+                      />
+                    </div>
+                  )}
+
+                  <div class="grow">
+                    <h4 class="mb-1 text-xl font-bold text-neutral-800">
+                      {update.title}
+                    </h4>
+                    <div class="mb-3 flex flex-wrap items-center gap-2">
+                      <span class="mr-2 text-sm font-bold text-neutral-900">
+                        {update.date}
+                      </span>
+                      {update.tag.map((t) => (
+                        <span class="rounded-full bg-neutral-200 px-2.5 py-0.5 text-xs font-semibold tracking-wide text-neutral-800 uppercase">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <div
+                      class="mb-4 text-base leading-relaxed text-neutral-700 [&_a]:underline"
+                      set:html={update.html}
+                    />
+                    {update.url && (
+                      <a
+                        href={update.url.href}
+                        class="inline-block rounded-md bg-red-800 px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-red-900"
+                        target={
+                          update.url.external || update.url.target
+                            ? "_blank"
+                            : undefined
+                        }
+                        rel={
+                          update.url.external || update.url.target
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                      >
+                        {update.url.text}
+                        {(update.url.external || update.url.target) && (
+                          <i
+                            class="fas fa-external-link-alt ml-2 text-xs"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+
+          {
+            hasMoreUpdates && (
+              <>
+                <div id="hidden-updates" class="hidden" aria-live="polite">
+                  {remainingUpdates.map((update) => (
+                    <div class="border-b border-neutral-200 py-6 text-left last:border-0">
+                      <div class="flex flex-col items-start gap-6 md:flex-row">
+                        {update.image && (
+                          <div class="pointer-events-none flex aspect-video w-full shrink-0 items-center justify-center rounded-lg border border-neutral-800 bg-neutral-950 p-3 shadow-sm select-none md:aspect-auto md:h-36 md:w-56">
+                            <Image
+                              src={update.image.src}
+                              alt={update.image.alt}
+                              class="max-h-full max-w-full rounded object-contain"
+                            />
+                          </div>
+                        )}
+
+                        <div class="grow">
+                          <h4 class="mb-1 text-xl font-bold text-neutral-800">
+                            {update.title}
+                          </h4>
+                          <div class="mb-3 flex flex-wrap items-center gap-2">
+                            <span class="mr-2 text-sm font-bold text-neutral-900">
+                              {update.date}
+                            </span>
+                            {update.tag.map((t) => (
+                              <span class="rounded-full bg-neutral-200 px-2.5 py-0.5 text-xs font-semibold tracking-wide text-neutral-800 uppercase">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                          <div
+                            class="mb-4 text-base leading-relaxed text-neutral-700 [&_a]:underline"
+                            set:html={update.html}
+                          />
+                          {update.url && (
+                            <a
+                              href={update.url.href}
+                              class="inline-block rounded-md bg-red-800 px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-red-900"
+                              target={
+                                update.url.external || update.url.target
+                                  ? "_blank"
+                                  : undefined
+                              }
+                              rel={
+                                update.url.external || update.url.target
+                                  ? "noopener noreferrer"
+                                  : undefined
+                              }
+                            >
+                              {update.url.text}
+                              {(update.url.external || update.url.target) && (
+                                <i
+                                  class="fas fa-external-link-alt ml-2 text-xs"
+                                  aria-hidden="true"
+                                />
+                              )}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="mt-4 text-center">
+                  <button
+                    id="toggle-updates"
+                    class="inline-block cursor-pointer rounded bg-red-800 px-6 py-2.5 font-bold text-white transition-colors hover:bg-red-900 focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:outline-none"
+                    aria-expanded="false"
+                    aria-controls="hidden-updates"
+                  >
+                    Show More Updates
+                  </button>
+                </div>
+              </>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Our Mission Statement */}
+  <section
+    class="border-t border-neutral-200 bg-neutral-50 px-4 py-12"
+    aria-labelledby="mission-heading"
+  >
+    <div class="mx-auto max-w-6xl">
+      <div
+        class="rounded-lg border-2 border-red-800 bg-white p-8 text-neutral-900 shadow-lg"
+      >
+        <div class="mb-6 text-center">
+          <h2
+            id="mission-heading"
+            class="text-3xl font-bold tracking-tight text-neutral-800"
+          >
+            Our Mission
+          </h2>
+        </div>
+        <div
+          class="mx-auto flex max-w-4xl flex-col gap-4 text-center text-lg leading-relaxed text-neutral-700"
+        >
+          <p>
+            At Red Team Village, our mission is to foster a collaborative
+            environment where security professionals can develop and enhance
+            their offensive security skills. We believe in the power of
+            community-driven education and the importance of practical, hands-on
+            learning experiences.
+          </p>
+          <p>
+            We aim to bridge the gap between theoretical knowledge and
+            real-world application by providing accessible training, resources,
+            and networking opportunities. Through our events, workshops, and
+            online platforms, we strive to build a diverse and inclusive
+            community that advances the field of offensive security.
+          </p>
+          <p>
+            By empowering individuals with the knowledge and skills needed to
+            identify and address security vulnerabilities, we contribute to
+            creating a more secure digital world for everyone.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Resource Card Footer Links */}
+  <section
+    class="bg-neutral-100 px-4 py-12"
+    aria-labelledby="resources-heading"
+  >
+    <h2
+      id="resources-heading"
+      class="mb-8 text-center text-3xl font-bold tracking-tight text-neutral-800"
+    >
+      Additional Resources
+    </h2>
+    <div class="mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 gap-8 text-left md:grid-cols-3">
+        {/* YouTube Card */}
+        <div
+          class="flex flex-col justify-between rounded-lg bg-red-800 p-8 text-white shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div>
+            <div class="mb-4 text-center text-5xl">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </div>
+            <h3 class="mb-4 text-center text-2xl font-bold tracking-tight">
+              Video Content
+            </h3>
+            <p class="mb-6 text-center text-base leading-relaxed text-red-50">
+              Watch our workshops, training sessions, and educational videos
+              designed to enhance your offensive security skills.
+            </p>
+          </div>
+          <a
+            href="https://www.youtube.com/redteamvillage"
+            class="block rounded bg-white px-6 py-3 text-center font-bold text-neutral-900 transition-colors hover:bg-neutral-50"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit our official Red Team Village YouTube channel (opens in a new tab)"
+          >
+            Visit YouTube <i
+              class="fas fa-external-link-alt ml-1 text-xs"
+              aria-hidden="true"></i>
+          </a>
+        </div>
+
+        {/* Discord Card */}
+        <div
+          class="flex flex-col justify-between rounded-lg bg-red-800 p-8 text-white shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div>
+            <div class="mb-4 text-center text-5xl">
+              <i class="fas fa-users" aria-hidden="true"></i>
+            </div>
+            <h3 class="mb-4 text-center text-2xl font-bold tracking-tight">
+              Community
+            </h3>
+            <p class="mb-6 text-center text-base leading-relaxed text-red-50">
+              Join a community of like-minded professionals and enthusiasts
+              passionate about offensive security.
+            </p>
+          </div>
+          <a
+            href="https://discord.gg/redteamvillage"
+            class="block rounded bg-white px-6 py-3 text-center font-bold text-neutral-900 transition-colors hover:bg-neutral-50"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Join our official Red Team Village Discord Community Server (opens in a new tab)"
+          >
+            Join Us <i
+              class="fas fa-external-link-alt ml-1 text-xs"
+              aria-hidden="true"></i>
+          </a>
+        </div>
+
+        {/* Events Link Card */}
+        <div
+          class="flex flex-col justify-between rounded-lg bg-red-800 p-8 text-white shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div>
+            <div class="mb-4 text-center text-5xl">
+              <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            </div>
+            <h3 class="mb-4 text-center text-2xl font-bold tracking-tight">
+              Events
+            </h3>
+            <p class="mb-6 text-center text-base leading-relaxed text-red-50">
+              Participate in conferences, CTFs, and workshops both online and
+              in-person throughout the year.
+            </p>
+          </div>
+          <a
+            href="/events"
+            class="block rounded bg-white px-6 py-3 text-center font-bold text-neutral-900 transition-colors hover:bg-neutral-50"
+          >
+            View Events
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const toggleButton = document.getElementById("toggle-updates");
+  const hiddenUpdates = document.getElementById("hidden-updates");
+
+  if (toggleButton && hiddenUpdates) {
+    toggleButton.addEventListener("click", () => {
+      const isHidden = hiddenUpdates.classList.contains("hidden");
+
+      if (isHidden) {
+        hiddenUpdates.classList.remove("hidden");
+        toggleButton.textContent = "Show Fewer Updates";
+        toggleButton.setAttribute("aria-expanded", "true");
+      } else {
+        hiddenUpdates.classList.add("hidden");
+        toggleButton.textContent = "Show More Updates";
+        toggleButton.setAttribute("aria-expanded", "false");
+        toggleButton.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  }
+</script>

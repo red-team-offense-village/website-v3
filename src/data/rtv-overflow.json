@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Malware Exploitation in PDFs",
+    "datetime": "Feb. 21, 2026 10:00AM EST",
+    "presenter": "Filipi Pires",
+    "description": "Uncover the hidden dangers within the world's most common document format by dissecting real-world PDF exploits, from heap spray attacks to covert data exfiltration. This deep dive equips offensive security professionals with the technical knowledge to master shellcode injection and memory manipulation, staying one step ahead of sophisticated adversaries.",
+    "image": "filipi.jpg"
+  },
+  {
+    "title": "Ransomware vs EDR",
+    "datetime": "Feb. 21, 2026 11:00AM EST",
+    "presenter": "Zoziel P. Freire",
+    "description": "Challenge the perceived invincibility of Endpoint Detection and Response (EDR) by examining cross-platform ransomware tactics designed to exploit telemetry gaps and behavioral blind spots. Through live demonstrations and technical walkthroughs of evasion strategies on Windows, macOS, and Linux, this session provides blue teamers and threat hunters with a pragmatic roadmap for building resilient, attacker-aware defenses.",
+    "image": "zoziel.jpg"
+  },
+  {
+    "title": "Glytch C2",
+    "datetime": "Feb. 21, 2026 12:00PM EST",
+    "presenter": "Anıl Çelik & Emre Odaman",
+    "description": "Discover the future of stealthy post-exploitation with GlytchC2, a tool that leverages live streaming platforms to create a near-undetectable Command-and-Control (C2) channel. This session explores how to bypass traditional network defenses by using Twitch to execute OS commands and exfiltrate data, complete with a live demo of the framework's covert capabilities.",
+    "image": "anil.jpg",
+    "image2": "emre.jpg"
+  },
+  {
+    "title": "Red-for-Blue: Fortifying Applications Through Actionable Red-Teaming",
+    "datetime": "Feb. 21, 2026 1:00PM EST",
+    "presenter": "Itsik Mantin & Itay Hazan",
+    "description": "Step into the front lines of GenAI defense by exploring a novel red-teaming approach designed to fortify LLM applications against rapidly evolving attack surfaces. This session introduces a powerful \"security triangle\"—combining threat-wise prompt red-teaming, automated prompt patching, and security-steerable models—to transform offensive insights into actionable application hardening.",
+    "image": "itsik.jpg",
+    "image2": "placeholder.png"
+  },
+  {
+    "title": "Don't Be LLame - The Basics of Attacking LLMs",
+    "datetime": "Feb. 21, 2026 2:00PM EST",
+    "presenter": "Alex Bernier & Brent Harrel",
+    "description": "Demystify the mechanics of Large Language Models to uncover high-impact attack surfaces that often bypass traditional monitoring and security controls. This session bridges the gap between theoretical LLM behavior and practical Red Team operations, focusing on prompt injection strategies that achieve critical objectives like lateral movement and privilege escalation.",
+    "image": "alex.jpg",
+    "image2": "brent.jpg"
+  },
+  {
+    "title": "Building Your First Windows Malware Loader",
+    "datetime": "Feb. 21, 2026 3:00PM EST",
+    "presenter": "Royce Yaezenko",
+    "description": "Demystify the construction of malicious binaries in this hands-on workshop that guides participants through building a fully functional Windows 11 process-injection loader from scratch. By mastering the \"classic three-call\" technique and implementing essential evasion tactics like XOR obfuscation and file bloating, attendees will gain practical experience in both malware assembly and defensive bypass strategies.",
+    "image": "royce.png"
+  },
+  {
+    "title": "OSINT for Hackers",
+    "datetime": "Feb. 21, 2026 4:00PM EST",
+    "presenter": "Lee McWhorter",
+    "description": "Master the art of turning public data into a powerful offensive advantage through high-impact reconnaissance techniques and immersive, hands-on exercises. This interactive workshop dives into the most effective OSINT tools and methodologies, empowering attendees to uncover actionable intelligence and significantly increase their value within any security organization.",
+    "image": "lee.jpg"
+  },
+  {
+    "title": "Adversary Intel Lab",
+    "datetime": "Feb. 21, 2026 5:00PM EST",
+    "presenter": "Fredrik Sandstorm",
+    "description": "Transform raw threat intelligence into actionable operations by analyzing real-world adversary behaviors and identifying critical TTPs. Participants will leverage the ATT&CK Navigator to bridge the gap between intelligence and execution, walking away with a completed adversary worksheet and a functional red team emulation playbook.",
+    "image": "fredrik.jpg"
+  },
+  {
+    "title": "Hiring or Triangle of Pain",
+    "datetime": "Feb. 21, 2026 6:00PM EST",
+    "presenter": "Frank Victory",
+    "description": "Frank Victory has spent 30 years navigating the gray areas between breaking and building. A firm believer that shells matter more than titles, Frank's career spans the full spectrum of the craft—from deep-dive incident response and threat hunting to offensive adversary simulation. When he is not securing enterprise environments, he is training the next generation of hackers, teaching Social Engineering and Ethical Hacking at the University level. As the President of Denver OWASP and the force behind the SnowFROC conference, Frank is a pillar of the Colorado security scene and host of the interview portion of the Colorado = Security Podcast, where he's spent years asking one question: What is the biggest challenge in cybersecurity today?",
+    "image": "frank.png"
+  }
+]

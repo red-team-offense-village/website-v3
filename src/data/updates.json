@@ -1,0 +1,112 @@
+[
+  {
+    "title": "2026 New Board Members",
+    "date": "February 14, 2026",
+    "content": "Please join us in welcoming the newest additions to the Red Team Village Board of Directors! 🎉 These leaders are stepping in to strengthen our mission, expand our programs, and continue building hands on opportunities for the community.",
+    "tag": ["RTV"],
+    "url": {
+      "href": "/team",
+      "text": "Our Team",
+      "external": false
+    }
+  },
+  {
+    "title": "RTV @ BSidesNYC 25",
+    "date": "October 28, 2025",
+    "content": "Join Red Team Village at BSidesNYC for swag, a CTF to test your skills, and a live demonstration of our Hunting DLL Sideloads Tactic, where you'll learn hands-on identification and exploitation techniques that go beyond automated scanning.",
+    "tag": ["Tactics", "CTF", "BSidesNYC"],
+    "url": {
+      "href": "https://threatsims.com/user/events/904259c3-c646-4adc-85b1-91c719b52384",
+      "text": "Register for CTF",
+      "external": true
+    }
+  },
+  {
+    "title": "RTV CRON 0x3",
+    "date": "May 29, 2025",
+    "content": "The third episode of RTV CRON is coming May 29th! We'll be providing updates on our DEF CON 33 plans and Mike Bell will be presenting 'Introduction to Ghidra and Version Tracking'.",
+    "tag": ["RTV CRON", "Live"],
+    "url": {
+      "href": "/rtv-cron/",
+      "text": "More Info",
+      "external": false
+    }
+  },
+  {
+    "title": "RTV CRON Call for Workshops",
+    "date": "March 10, 2025",
+    "content": "We're looking for speakers for our RTV CRON workshop series! If you're interested in speaking, please fill out the Call on Sessionize. We're looking for a two hour workshop on a topic of your choice (as long as it's related to offensive security). For examples of what we're looking for, check out the RTV Overflow videos which we recently released on our [YouTube channel](https://www.youtube.com/@RedTeamVillage/videos).",
+    "tag": ["RTV CRON", "Call for Workshops"],
+    "image": {
+      "src": "RTVcron-cfw.png",
+      "alt": "Red Team Village Conference 2023"
+    },
+    "url": {
+      "href": "https://sessionize.com/rtv-cron/",
+      "text": "Answer the Call!",
+      "external": true
+    }
+  },
+  {
+    "title": "RTV CRON 0x2",
+    "date": "April 24, 2025 3:00 PM EDT",
+    "content": "The second episode of RTV CRON is coming soon! We'll have a live workshop and we'll also be discussing the latest news in the village. Join us on Thursday, April 24th at 3:00 PM EDT featuring Kevin Clark and Skyler Knecht in their workshop titled 'Systematic Malware: A Rule-Based Approach to Creating Payloads'. Also, we'll be unveiling our RTV mascot for DEF CON 33!",
+    "tag": ["RTV CRON", "Live"],
+    "url": {
+      "href": "/rtv-cron/",
+      "text": "More Info",
+      "external": false
+    }
+  },
+  {
+    "title": "RTV CRON 0x1",
+    "date": "March 24, 2025",
+    "content": "The first episode of RTV CRON is coming soon! We'll have a live workshop and we'll also be discussing the latest news in the village. Join us on Thursday, March 27th at 7:00 PM EDT featuring Jeff Tomkiewicz in his workshop titled 'Influence_Ops: Tactical Pretexting'.",
+    "tag": ["RTV CRON", "Live"],
+    "url": {
+      "href": "/rtv-cron/",
+      "text": "More Info",
+      "external": false
+    }
+  },
+  {
+    "title": "Call for Sponsors for DEF CON 33",
+    "date": "March 14, 2025",
+    "content": "We're officially accepting sponsors for our DEF CON 33 event! If you're interested in sponsoring the Red Team Village this year, please reach out to our team. We have various sponsorship tiers available from Bronze to Diamond, as well as specialized opportunities including CTF/Contest Sponsorships and Prize Contributions.\n\nOur team can share a sponsorship prospectus detailing all benefits and visibility opportunities for each level. We're also open to discussing custom sponsorship ideas that align with your organization's goals. Contact us soon to secure your spot, as premium sponsorship opportunities are limited and will fill quickly!",
+    "tag": ["DEF CON 33", "Call for Sponsors"],
+    "url": {
+      "href": "mailto:sponsors@redteamvillage.io",
+      "text": "Village Sponsorship Information"
+    }
+  },
+  {
+    "title": "Call for Volunteers for DEF CON 33",
+    "date": "March 14, 2025",
+    "content": "We're looking for volunteers for our DEF CON 33 event! If you're interested in volunteering with Red Team Village at DEF CON this year, please fill out the volunteer form linked below. We need volunteers to help with various aspects of our operation, including CTF support, workshop assistance, crowd control, general logistics, and much more.\n\n Volunteering offers a great opportunity to network with like-minded security professionals, gain behind-the-scenes experience at one of the world's premier hacking conferences, and contribute to the offensive security community. No matter your skill level, we have roles that can match your interests and expertise. All volunteers will receive special RTV volunteer swag and our sincere appreciation for helping make this year's village a success.",
+    "tag": ["DEF CON 33", "Call for Volunteers"],
+    "url": {
+      "href": "https://forms.gle/LM9NWobjXYYxvHR78",
+      "text": "Volunteer for the Village",
+      "target": "_blank",
+      "external": true
+    }
+  },
+  {
+    "title": "Call for Workshops & Tactics for DEF CON 33",
+    "date": "March 14, 2025",
+    "content": "We're looking for workshops and tactics for our DEF CON 33 event! If you're interested in hosting a workshop or sharing a tactic, please fill out the workshop form linked below.\n\nIdeal workshops provide structured, hands-on learning experiences led by an instructor. Meanwhile, tactics are short, self-guided activities that attendees can try out at their own pace in our less formal environment—perfect for demonstrating quick techniques, tool usage, or security concepts that can be completed in 10-20 minutes. These asynchronous activities allow participants to engage with practical offensive security skills in a drop-in format throughout the conference.\n\nWhether you're a seasoned professional with a comprehensive workshop or have a clever tactical exercise worth sharing, we encourage you to submit your proposal. Selected presenters will have the opportunity to share their expertise with hundreds of passionate security practitioners in our dedicated village space at DEF CON 33. Submit your workshop or tactics proposal soon, as selection will be competitive!",
+    "tag": ["DEF CON 33", "Call for Workshops"],
+    "url": {
+      "href": "https://sessionize.com/rtv-at-defcon-33/",
+      "text": "Submit a Workshop/Tactic",
+      "target": "_blank",
+      "external": true
+    }
+  },
+  {
+    "title": "And We're Back!",
+    "date": "March 10, 2025",
+    "content": "We are excited to announce that the new Red Team Village website is officially live!",
+    "tag": ["Village News", "Website"]
+  }
+]

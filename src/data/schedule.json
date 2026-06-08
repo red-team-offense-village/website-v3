@@ -1,0 +1,46 @@
+[
+  {
+    "title": "RTV CRON 0x5",
+    "dateRange": "June 26, 2026",
+    "times": "TBD",
+    "location": "Red Team Village YouTube Channel",
+    "description": "The fifth episode of RTV CRON is coming June 26th!",
+    "image": {
+      "src": "rtv-cron.png",
+      "alt": "RTV CRON 0x5"
+    }
+  },
+  {
+    "title": "Red Team Village @ DEF CON 34",
+    "dateRange": "August 6-9, 2026",
+    "times": "TBD",
+    "location": "Las Vegas Convention Center, Red Team Village Area",
+    "description": "Visit the village at DEF CON 34! We'll have a weekend packed with workshops, activities, swag, and so much more!",
+    "image": {
+      "src": "dc34.avif",
+      "alt": "DEF CON 34"
+    },
+    "link": {
+      "url": "https://www.defcon.org/",
+      "text": "DEF CON Website",
+      "external": true
+    },
+    "tags": ["Conference", "DEF CON"]
+  },
+  {
+    "title": "Cyber Wargames @ DEF CON 34",
+    "dateRange": "August 7-9, 2026",
+    "times": "9am - 5pm",
+    "location": "Las Vegas Convention Center, Red Team Village Area",
+    "description": "Join us for Cyber Wargames at DEF CON 34! It's an exciting new collection of infrastructure attack-defense cyber games. Find out more by clicking on the link below!",
+    "image": {
+      "src": "dc34.avif",
+      "alt": "DEF CON 34"
+    },
+    "link": {
+      "url": "/cyber-wargames",
+      "text": "Cyber Wargames Details"
+    },
+    "tags": ["Conference", "DEF CON", "Competition"]
+  }
+]
