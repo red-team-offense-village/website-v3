@@ -26,21 +26,5 @@
       "external": true
     },
     "tags": ["Conference", "DEF CON"]
-  },
-  {
-    "title": "Cyber Wargames @ DEF CON 34",
-    "dateRange": "August 7-9, 2026",
-    "times": "9am - 5pm",
-    "location": "Las Vegas Convention Center, Red Team Village Area",
-    "description": "Join us for Cyber Wargames at DEF CON 34! It's an exciting new collection of infrastructure attack-defense cyber games. Find out more by clicking on the link below!",
-    "image": {
-      "src": "dc34.avif",
-      "alt": "DEF CON 34"
-    },
-    "link": {
-      "url": "/cyber-wargames",
-      "text": "Cyber Wargames Details"
-    },
-    "tags": ["Conference", "DEF CON", "Competition"]
   }
 ]
