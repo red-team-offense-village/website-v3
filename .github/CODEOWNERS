@@ -14,3 +14,4 @@
 /astro.config.mjs     @mauvehed @rtv-ryen
 /package.json         @mauvehed @rtv-ryen
 /package-lock.json    @mauvehed @rtv-ryen
+netlify.toml          @mauvehed
