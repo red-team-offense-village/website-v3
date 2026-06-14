@@ -40,6 +40,42 @@
               "description": "The Devices and Services Security team builds innovative tools that detect, assess, and mitigate security issues across our consumer device businesses, from Echo to Fire TV to Alexa. We believe the best way to protect our customers is to ensure our products are secure and compliant by default, and our security engineers and developers are working together across the product development life cycle to make that a reality.",
               "website": "https://amazon.jobs/content/en/teams/amazon-security/devices-services",
               "logo": "amazon.png"
+            },
+            {
+              "name": "Corelight",
+              "description": "Corelight transforms network and cloud activity into evidence so that data-first defenders can stay ahead of ever-changing attacks. Delivered by our Open NDR Platform, Corelight’s comprehensive, correlated evidence gives you unparalleled visibility into your network. This evidence allows you to unlock new analytics, investigate faster, hunt like an expert, and even disrupt future attacks. Our on-prem and cloud sensors go anywhere to capture structured, industry-standard telemetry and insights that work with the tools and processes you already use. Corelight’s global customers include Fortune 500 companies, major government agencies, and research universities.",
+              "website": "https://corelight.com/",
+              "logo": "corelight.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/corelight_inc"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/corelight/"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/c/CorelightInc"
+                }
+              ]
+            },
+            {
+              "name": "Tenzai",
+              "description": "Tenzai is an AI-native cybersecurity company building autonomous AI hackers to ensure enterprises deliver unbreakable code. Its platform actively hacks, exploits, and helps fix vulnerabilities across enterprise software - continuously and at scale. Founded in 2025 by cybersecurity veterans Pavel Gurvich, Ariel Zeitlin, Ofri Ziv, Itamar Tal, and Aner Mazur, Tenzai has raised $75 million in seed funding from leading investors including Battery Ventures, Greylock Partners, Lux Capital, and Swish Ventures.",
+              "website": "https://www.tenzai.com/",
+              "logo": "tenzai.svg",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/tenzai-inc/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/Tenzai_Labs"
+                }
+              ]
             }
           ]
         },
