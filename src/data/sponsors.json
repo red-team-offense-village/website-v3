@@ -40,6 +40,22 @@
               "description": "The Devices and Services Security team builds innovative tools that detect, assess, and mitigate security issues across our consumer device businesses, from Echo to Fire TV to Alexa. We believe the best way to protect our customers is to ensure our products are secure and compliant by default, and our security engineers and developers are working together across the product development life cycle to make that a reality.",
               "website": "https://amazon.jobs/content/en/teams/amazon-security/devices-services",
               "logo": "amazon.png"
+            },
+            {
+              "name": "Tenzai",
+              "description": "Tenzai is an AI-native cybersecurity company building autonomous AI hackers to ensure enterprises deliver unbreakable code. Its platform actively hacks, exploits, and helps fix vulnerabilities across enterprise software - continuously and at scale. Founded in 2025 by cybersecurity veterans Pavel Gurvich, Ariel Zeitlin, Ofri Ziv, Itamar Tal, and Aner Mazur, Tenzai has raised $75 million in seed funding from leading investors including Battery Ventures, Greylock Partners, Lux Capital, and Swish Ventures.",
+              "website": "https://www.tenzai.com/",
+              "logo": "tenzai.svg",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/tenzai-inc/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/Tenzai_Labs"
+                }
+              ]
             }
           ]
         },
