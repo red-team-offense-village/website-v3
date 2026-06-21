@@ -112,6 +112,22 @@
           "name": "Silver",
           "sponsors": [
             {
+              "name": "CYQUEST",
+              "description": "CYQUEST is a gamified cybersecurity learning platform where students master real-world skills through quests, challenges, and leveling up. Gaming meets hacking education - gain XP with every win. Complete quests, earn XP, unlock achievements. Sign up today for free! ",
+              "website": "http://www.cyquest.io/",
+              "logo": "cyquest.png",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/cyquest/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/CYQUEST_io"
+                }
+              ]
+            },
+            {
               "name": "Fortra",
               "description": "Fortra is a leading cybersecurity company providing advanced offensive and defensive security solutions across the entire cyber attack chain. Serving over 30,000 customers globally — including 22 of the top 25 Fortune 500 companies — Fortra offers a unified, data-centric security platform covering threat detection, data protection, infrastructure security, and identity governance. With battle-tested technologies and a relentless focus on simplifying security, Fortra helps organizations of all sizes stay ahead of evolving threats.",
               "website": "https://www.fortra.com",
