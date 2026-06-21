@@ -112,6 +112,30 @@
           "name": "Silver",
           "sponsors": [
             {
+              "name": "Bishop Fox",
+              "description": "Bishop Fox is the leading authority in offensive security, providing solutions ranging from continuous penetration testing, red teaming, and attack surface management to product, cloud, and application security assessments. Discover why our Cosmos platform, service innovation, and culture of excellence draw industry awards, and our offerings are consistently ranked as “world class” by customers.",
+              "website": "https://bishopfox.com/",
+              "logo": "bishopfox.svg",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/bishop-fox/posts/?feedView=all/"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/c/Bishopfox"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/bishopfox"
+                },
+                {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/BishopFoxConsulting"
+                }
+              ]
+            },
+            {
               "name": "CYQUEST",
               "description": "CYQUEST is a gamified cybersecurity learning platform where students master real-world skills through quests, challenges, and leveling up. Gaming meets hacking education - gain XP with every win. Complete quests, earn XP, unlock achievements. Sign up today for free! ",
               "website": "http://www.cyquest.io/",
