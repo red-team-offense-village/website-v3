@@ -199,6 +199,22 @@
                   "url": "https://www.linkedin.com/company/alteredsecurity/"
                 }
               ]
+            },
+            {
+              "name": "White Knight Labs",
+              "description": "A Global Cyber Security Consultancy specializing in Offensive Cyber Engagements.",
+              "website": "https://whiteknightlabs.com/",
+              "logo": "whiteknightlabs.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://twitter.com/WKL_cyber"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/white-knight-labs/"
+                }
+              ]
             }
           ]
         }
