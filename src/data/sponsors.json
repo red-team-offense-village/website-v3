@@ -180,6 +180,27 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Prizes",
+          "sponsors": [
+            {
+              "name": "Altered Security",
+              "description": "Start your Red Team training journey Altered Security! Altered Security offers multiple on-prem Red Team and Azure Red Team courses with affordable and enterprise-like hands-on labs. We are the creators of the popular Red Team certifications - CRTP, CRTE and CARTP. Join more than 40K professionals from 130+ countries.",
+              "website": "https://www.alteredsecurity.com/",
+              "logo": "alteredsecurity.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/AlteredSecurity"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/alteredsecurity/"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
