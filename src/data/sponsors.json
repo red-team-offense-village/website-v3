@@ -83,6 +83,27 @@
           "name": "Gold",
           "sponsors": [
             {
+              "name": "Simaptic",
+              "description": "Built by veteran operators and proudly backed by BC Security, SIMAPTIC provides realistic, continuous threat validation across on-prem, cloud, and hybrid environments. Our system safely emulates end-to-end attacker behavior to uncover critical infrastructure vulnerabilities. Ultimately, we turn complex adversarial campaigns into clear, actionable reports that both your SOC and executive teams can actually use.",
+              "website": "https://simaptic.ai/",
+              "logo": "simaptic.svg",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/bcsecurity"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/bcsecurity"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/bcsecurity0"
+                },
+                { "name": "Facebook", "url": "https://www.facebook.com/bcsec1" }
+              ]
+            },
+            {
               "name": "SpecterOps",
               "description": "SpecterOps is the creator of BloodHound and a pioneer in Identity Attack Path Management. Drawing on deep expertise in adversary tradecraft, SpecterOps helps organizations identify and eliminate the attack paths that put their most critical assets at risk. BloodHound, the company’s foundational open-source platform, is widely used by defenders and red teams to understand how identity and access can be abused in complex environments. BloodHound Enterprise extends that practice for security teams with capabilities for attack path prioritization, remediation guidance, and reporting to reduce identity risk at scale.",
               "website": "https://specterops.io/",
@@ -112,6 +133,46 @@
           "name": "Silver",
           "sponsors": [
             {
+              "name": "Bishop Fox",
+              "description": "Bishop Fox is the leading authority in offensive security, providing solutions ranging from continuous penetration testing, red teaming, and attack surface management to product, cloud, and application security assessments. Discover why our Cosmos platform, service innovation, and culture of excellence draw industry awards, and our offerings are consistently ranked as “world class” by customers.",
+              "website": "https://bishopfox.com/",
+              "logo": "bishopfox.svg",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/bishop-fox/posts/?feedView=all/"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/c/Bishopfox"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/bishopfox"
+                },
+                {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/BishopFoxConsulting"
+                }
+              ]
+            },
+            {
+              "name": "CYQUEST",
+              "description": "CYQUEST is a gamified cybersecurity learning platform where students master real-world skills through quests, challenges, and leveling up. Gaming meets hacking education - gain XP with every win. Complete quests, earn XP, unlock achievements. Sign up today for free! ",
+              "website": "http://www.cyquest.io/",
+              "logo": "cyquest.png",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/cyquest/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/CYQUEST_io"
+                }
+              ]
+            },
+            {
               "name": "Fortra",
               "description": "Fortra is a leading cybersecurity company providing advanced offensive and defensive security solutions across the entire cyber attack chain. Serving over 30,000 customers globally — including 22 of the top 25 Fortune 500 companies — Fortra offers a unified, data-centric security platform covering threat detection, data protection, infrastructure security, and identity governance. With battle-tested technologies and a relentless focus on simplifying security, Fortra helps organizations of all sizes stay ahead of evolving threats.",
               "website": "https://www.fortra.com",
@@ -136,6 +197,43 @@
                 {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/skillbit-cyber/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Prizes",
+          "sponsors": [
+            {
+              "name": "Altered Security",
+              "description": "Start your Red Team training journey Altered Security! Altered Security offers multiple on-prem Red Team and Azure Red Team courses with affordable and enterprise-like hands-on labs. We are the creators of the popular Red Team certifications - CRTP, CRTE and CARTP. Join more than 40K professionals from 130+ countries.",
+              "website": "https://www.alteredsecurity.com/",
+              "logo": "alteredsecurity.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/AlteredSecurity"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/alteredsecurity/"
+                }
+              ]
+            },
+            {
+              "name": "White Knight Labs",
+              "description": "A Global Cyber Security Consultancy specializing in Offensive Cyber Engagements.",
+              "website": "https://whiteknightlabs.com/",
+              "logo": "whiteknightlabs.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://twitter.com/WKL_cyber"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/white-knight-labs/"
                 }
               ]
             }
