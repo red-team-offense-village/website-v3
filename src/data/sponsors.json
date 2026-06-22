@@ -83,6 +83,27 @@
           "name": "Gold",
           "sponsors": [
             {
+              "name": "Simaptic",
+              "description": "Built by veteran operators and proudly backed by BC Security, SIMAPTIC provides realistic, continuous threat validation across on-prem, cloud, and hybrid environments. Our system safely emulates end-to-end attacker behavior to uncover critical infrastructure vulnerabilities. Ultimately, we turn complex adversarial campaigns into clear, actionable reports that both your SOC and executive teams can actually use.",
+              "website": "https://simaptic.ai/",
+              "logo": "simaptic.svg",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/bcsecurity"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/bcsecurity"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/bcsecurity0"
+                },
+                { "name": "Facebook", "url": "https://www.facebook.com/bcsec1" }
+              ]
+            },
+            {
               "name": "SpecterOps",
               "description": "SpecterOps is the creator of BloodHound and a pioneer in Identity Attack Path Management. Drawing on deep expertise in adversary tradecraft, SpecterOps helps organizations identify and eliminate the attack paths that put their most critical assets at risk. BloodHound, the company’s foundational open-source platform, is widely used by defenders and red teams to understand how identity and access can be abused in complex environments. BloodHound Enterprise extends that practice for security teams with capabilities for attack path prioritization, remediation guidance, and reporting to reduce identity risk at scale.",
               "website": "https://specterops.io/",

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 390 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Simaptic Logo">
+  <style>
+    :root {
+      --blue: #085f60;   /* fill for defended hexes */
+      --red:  #941d0f;   /* fill for breach/path hexes */
+      --line: #0d1b1e;   /* thin dark outline */
+    }
+    .logo-text {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 58px; /* Increased font size for better visual balance */
+      fill: #0d1b1e;
+      letter-spacing: 0.03em;
+    }
+    .text-normal {
+      font-weight: 400; /* Normal weight for SIM and IC */
+    }
+    .text-bold {
+      font-weight: 700; /* Bold weight for APT */
+      fill: rgb(240, 119, 105);
+    }
+  </style>
+
+  <defs>
+    <!-- Reusable pointy-top hex -->
+    <g id="hex-blue">
+      <polygon
+        points="0,-9 7.794,-4.5 7.794,4.5 0,9 -7.794,4.5 -7.794,-4.5"
+        fill="var(--blue)" stroke="var(--line)" stroke-width="1" stroke-linejoin="round"/>
+    </g>
+    <g id="hex-red">
+      <polygon
+        points="0,-9 7.794,-4.5 7.794,4.5 0,9 -7.794,4.5 -7.794,-4.5"
+        fill="var(--red)" stroke="var(--line)" stroke-width="1" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <!-- Icon Graphic (Left aligned, vertically centered in expanded viewbox) -->
+  <g transform="translate(15, 35) scale(1.6)"> <!-- Scaled up icon to match text presence -->
+    <!-- Row 0 -->
+    <g transform="translate(0,0)">
+      <use href="#hex-blue" transform="translate(0,0)"/>
+      <use href="#hex-red"  transform="translate(17.3205,0)"/>
+    </g>
+    <!-- Row 1 -->
+    <g transform="translate(8.6603,15)">
+      <use href="#hex-blue" transform="translate(0,0)"/>
+      <use href="#hex-blue" transform="translate(17.3205,0)"/>
+      <use href="#hex-blue" transform="translate(34.6410,0)"/>
+    </g>
+    <!-- Row 2 -->
+    <g transform="translate(0,30)">
+      <use href="#hex-red" transform="translate(34.6410,0)"/>
+    </g>
+  </g>
+
+  <!-- Brand Text (Right aligned next to icon) -->
+  <text x="110" y="50" dominant-baseline="central" class="logo-text">
+    <tspan class="text-normal">SIM</tspan><tspan class="text-bold">APT</tspan><tspan class="text-normal">IC</tspan>
+  </text>
+</svg>
