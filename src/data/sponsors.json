@@ -62,6 +62,18 @@
               ]
             },
             {
+              "name": "Flare",
+              "description": "Flare is the platform that hundreds of organizations around the globe select to end the risk of account takeover, ransomware attacks and data breaches caused by human and non-human identity compromise. As the leader in identity-first Cyber Threat Intelligence (CTI), Flare helps detect high-risk identity exposures with the largest collection of stealer logs, criminal forums, and identity exposures in the industry. For more information, visit the website or start a free trial to experience the platform firsthand. Join our Discord community and explore Flare Academy to stay up-to-date on the latest in threat intelligence.",
+              "website": "https://flare.io/",
+              "logo": "flare.png",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/flare-io"
+                }
+              ]
+            },
+            {
               "name": "Tenzai",
               "description": "Tenzai is an AI-native cybersecurity company building autonomous AI hackers to ensure enterprises deliver unbreakable code. Its platform actively hacks, exploits, and helps fix vulnerabilities across enterprise software - continuously and at scale. Founded in 2025 by cybersecurity veterans Pavel Gurvich, Ariel Zeitlin, Ofri Ziv, Itamar Tal, and Aner Mazur, Tenzai has raised $75 million in seed funding from leading investors including Battery Ventures, Greylock Partners, Lux Capital, and Swish Ventures.",
               "website": "https://www.tenzai.com/",
