@@ -234,6 +234,26 @@
               ]
             },
             {
+              "name": "PentestingExams.com",
+              "description": "PentestingExams by The SecOps Group provides hands-on, practical cybersecurity certifications focused on real-world penetration testing, application security, cloud security, AI/LLM security, and red teaming skills.",
+              "website": "https://pentestingexams.com",
+              "logo": "secopsgroup.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/TheSecOpsGroup"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://in.linkedin.com/company/secops-group"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/@thesecopsgroup"
+                }
+              ]
+            },
+            {
               "name": "White Knight Labs",
               "description": "A Global Cyber Security Consultancy specializing in Offensive Cyber Engagements.",
               "website": "https://whiteknightlabs.com/",
