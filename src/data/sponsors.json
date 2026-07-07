@@ -241,6 +241,22 @@
           "name": "Prizes",
           "sponsors": [
             {
+              "name": "Arcanum Security",
+              "description": "Arcanum Information Security provides top-tier security assessments and training. We offer a full range of pentest and red team assessments, as well as comprehensive AI Pentests. Additionally, we train on cutting-edge web assessment techniques, AI Red Teaming and Pentesting, and AI Scaling for security teams.",
+              "website": "https://www.arcanum-sec.com",
+              "logo": "arcanum3.png",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://www.x.com/arcanuminfosec"
+                },
+                {
+                  "name": "X",
+                  "url": "https://www.x.com/jhaddix"
+                }
+              ]
+            },
+            {
               "name": "Altered Security",
               "description": "Start your Red Team training journey Altered Security! Altered Security offers multiple on-prem Red Team and Azure Red Team courses with affordable and enterprise-like hands-on labs. We are the creators of the popular Red Team certifications - CRTP, CRTE and CARTP. Join more than 40K professionals from 130+ countries.",
               "website": "https://www.alteredsecurity.com/",
