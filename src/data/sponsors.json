@@ -17,12 +17,12 @@
               "logo": "offsec.svg",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/OffensiveSec"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/offensive-security"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/OffensiveSec"
                 },
                 {
                   "name": "YouTube",
@@ -48,12 +48,12 @@
               "logo": "corelight.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/corelight_inc"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/corelight/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/corelight_inc"
                 },
                 {
                   "name": "YouTube",
@@ -101,18 +101,21 @@
               "logo": "simaptic.svg",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/bcsecurity"
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/bcsec1"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/bcsecurity0"
                 },
                 {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/bcsecurity"
                 },
                 {
-                  "name": "Instagram",
-                  "url": "https://www.instagram.com/bcsecurity0"
-                },
-                { "name": "Facebook", "url": "https://www.facebook.com/bcsec1" }
+                  "name": "X",
+                  "url": "https://x.com/bcsecurity"
+                }
               ]
             },
             {
@@ -122,8 +125,8 @@
               "logo": "specterops.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/SpecterOps"
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/specterops.io"
                 },
                 {
                   "name": "LinkedIn",
@@ -134,8 +137,8 @@
                   "url": "https://www.youtube.com/@specterops"
                 },
                 {
-                  "name": "Instagram",
-                  "url": "https://www.instagram.com/specterops.io"
+                  "name": "X",
+                  "url": "https://x.com/SpecterOps"
                 }
               ]
             }
@@ -151,6 +154,10 @@
               "logo": "bishopfox.svg",
               "socials": [
                 {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/BishopFoxConsulting"
+                },
+                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/bishop-fox/posts/?feedView=all/"
                 },
@@ -161,10 +168,6 @@
                 {
                   "name": "X",
                   "url": "https://x.com/bishopfox"
-                },
-                {
-                  "name": "Facebook",
-                  "url": "https://www.facebook.com/BishopFoxConsulting"
                 }
               ]
             },
@@ -185,18 +188,18 @@
               ]
             },
             {
-              "name": "Fortra",
-              "description": "Fortra is a leading cybersecurity company providing advanced offensive and defensive security solutions across the entire cyber attack chain. Serving over 30,000 customers globally — including 22 of the top 25 Fortune 500 companies — Fortra offers a unified, data-centric security platform covering threat detection, data protection, infrastructure security, and identity governance. With battle-tested technologies and a relentless focus on simplifying security, Fortra helps organizations of all sizes stay ahead of evolving threats.",
-              "website": "https://www.fortra.com",
-              "logo": "fortra.svg",
+              "name": "Maltek Solutions",
+              "description": "At Maltek Solutions, we are driven by an unwavering passion for cybersecurity. Our mission is to provide the best possible security solutions tailored to each customers unique needs. We believe in transparency, fairness, and equitable treatment for our team, which fosters an environment that enhances our ability to deliver top-notch services. By collaborating closely with our customers at every step, we ensure solutions that not only meet their security requirements but also align with their budget constraints. Our holistic approach, engaging both executive decision-makers and frontline security teams, allows us to understand and address the diverse aspects of our customers’ security posture",
+              "website": "https://malteksolutions.com",
+              "logo": "malteksolutions.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/fortra"
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/maltek-solutions-llc/"
                 },
                 {
-                  "name": "LinkedIn",
-                  "url": "https://www.linkedin.com/company/fortra"
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/@malteksolutions"
                 }
               ]
             },
@@ -209,6 +212,26 @@
                 {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/skillbit-cyber/"
+                }
+              ]
+            },
+            {
+              "name": "Zero-Point Security",
+              "description": "Zero-Point Security is a specialized cybersecurity training firm based in Warrington, UK. Zero‑Point Security is widely recognized for its red team operations training, delivering high-demand, self-paced courses to individuals and businesses seeking advanced offensive operations skills. Well-known courses include Red Team Operations I and II, both which are certified by the Council of Registered Ethical Security Testers (CREST).",
+              "website": "https://www.zeropointsecurity.co.uk",
+              "logo": "zero-point-security.png",
+              "socials": [
+                {
+                  "name": "Discord",
+                  "url": "https://discord.gg/Whz3YtY4gG"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/zero-point-security-ltd"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/_ZeroPointSec"
                 }
               ]
             }
@@ -224,12 +247,32 @@
               "logo": "alteredsecurity.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/AlteredSecurity"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/alteredsecurity/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/AlteredSecurity"
+                }
+              ]
+            },
+            {
+              "name": "PentestingExams.com",
+              "description": "PentestingExams by The SecOps Group provides hands-on, practical cybersecurity certifications focused on real-world penetration testing, application security, cloud security, AI/LLM security, and red teaming skills.",
+              "website": "https://pentestingexams.com",
+              "logo": "secopsgroup.png",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://in.linkedin.com/company/secops-group"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/TheSecOpsGroup"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/@thesecopsgroup"
                 }
               ]
             },
@@ -240,12 +283,12 @@
               "logo": "whiteknightlabs.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://twitter.com/WKL_cyber"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/white-knight-labs/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://twitter.com/WKL_cyber"
                 }
               ]
             }
