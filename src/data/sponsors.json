@@ -17,12 +17,12 @@
               "logo": "offsec.svg",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/OffensiveSec"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/offensive-security"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/OffensiveSec"
                 },
                 {
                   "name": "YouTube",
@@ -48,12 +48,12 @@
               "logo": "corelight.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/corelight_inc"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/corelight/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/corelight_inc"
                 },
                 {
                   "name": "YouTube",
@@ -101,18 +101,21 @@
               "logo": "simaptic.svg",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/bcsecurity"
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/bcsec1"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/bcsecurity0"
                 },
                 {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/bcsecurity"
                 },
                 {
-                  "name": "Instagram",
-                  "url": "https://www.instagram.com/bcsecurity0"
-                },
-                { "name": "Facebook", "url": "https://www.facebook.com/bcsec1" }
+                  "name": "X",
+                  "url": "https://x.com/bcsecurity"
+                }
               ]
             },
             {
@@ -122,8 +125,8 @@
               "logo": "specterops.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/SpecterOps"
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/specterops.io"
                 },
                 {
                   "name": "LinkedIn",
@@ -134,8 +137,8 @@
                   "url": "https://www.youtube.com/@specterops"
                 },
                 {
-                  "name": "Instagram",
-                  "url": "https://www.instagram.com/specterops.io"
+                  "name": "X",
+                  "url": "https://x.com/SpecterOps"
                 }
               ]
             }
@@ -151,6 +154,10 @@
               "logo": "bishopfox.svg",
               "socials": [
                 {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/BishopFoxConsulting"
+                },
+                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/bishop-fox/posts/?feedView=all/"
                 },
@@ -161,10 +168,6 @@
                 {
                   "name": "X",
                   "url": "https://x.com/bishopfox"
-                },
-                {
-                  "name": "Facebook",
-                  "url": "https://www.facebook.com/BishopFoxConsulting"
                 }
               ]
             },
@@ -228,12 +231,12 @@
               "logo": "alteredsecurity.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/AlteredSecurity"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/alteredsecurity/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/AlteredSecurity"
                 }
               ]
             },
@@ -244,12 +247,12 @@
               "logo": "secopsgroup.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://x.com/TheSecOpsGroup"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://in.linkedin.com/company/secops-group"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/TheSecOpsGroup"
                 },
                 {
                   "name": "YouTube",
@@ -264,12 +267,12 @@
               "logo": "whiteknightlabs.png",
               "socials": [
                 {
-                  "name": "X",
-                  "url": "https://twitter.com/WKL_cyber"
-                },
-                {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/white-knight-labs/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://twitter.com/WKL_cyber"
                 }
               ]
             }
