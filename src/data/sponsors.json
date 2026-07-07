@@ -185,22 +185,6 @@
               ]
             },
             {
-              "name": "Fortra",
-              "description": "Fortra is a leading cybersecurity company providing advanced offensive and defensive security solutions across the entire cyber attack chain. Serving over 30,000 customers globally — including 22 of the top 25 Fortune 500 companies — Fortra offers a unified, data-centric security platform covering threat detection, data protection, infrastructure security, and identity governance. With battle-tested technologies and a relentless focus on simplifying security, Fortra helps organizations of all sizes stay ahead of evolving threats.",
-              "website": "https://www.fortra.com",
-              "logo": "fortra.svg",
-              "socials": [
-                {
-                  "name": "X",
-                  "url": "https://x.com/fortra"
-                },
-                {
-                  "name": "LinkedIn",
-                  "url": "https://www.linkedin.com/company/fortra"
-                }
-              ]
-            },
-            {
               "name": "Skillbit",
               "description": "SkillBit Labs is a continuous learning platform designed to help assess and develop cybersecurity skills through hands-on, bite-sized labs. Whether you're an individual getting started in cybersecurity or an enterprise security manager, SkillBit has the resources for you to help take you / your team to the next level.",
               "website": "https://skillbit.com/",
@@ -209,6 +193,26 @@
                 {
                   "name": "LinkedIn",
                   "url": "https://www.linkedin.com/company/skillbit-cyber/"
+                }
+              ]
+            },
+            {
+              "name": "Zero-Point Security",
+              "description": "Zero-Point Security is a specialized cybersecurity training firm based in Warrington, UK. Zero‑Point Security is widely recognized for its red team operations training, delivering high-demand, self-paced courses to individuals and businesses seeking advanced offensive operations skills. Well-known courses include Red Team Operations I and II, both which are certified by the Council of Registered Ethical Security Testers (CREST).",
+              "website": "https://www.zeropointsecurity.co.uk",
+              "logo": "zero-point-security.png",
+              "socials": [
+                {
+                  "name": "Discord",
+                  "url": "https://discord.gg/Whz3YtY4gG"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/zero-point-security-ltd"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/_ZeroPointSec"
                 }
               ]
             }
