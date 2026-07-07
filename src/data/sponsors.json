@@ -188,6 +188,22 @@
               ]
             },
             {
+              "name": "Maltek Solutions",
+              "description": "At Maltek Solutions, we are driven by an unwavering passion for cybersecurity. Our mission is to provide the best possible security solutions tailored to each customers unique needs. We believe in transparency, fairness, and equitable treatment for our team, which fosters an environment that enhances our ability to deliver top-notch services. By collaborating closely with our customers at every step, we ensure solutions that not only meet their security requirements but also align with their budget constraints. Our holistic approach, engaging both executive decision-makers and frontline security teams, allows us to understand and address the diverse aspects of our customers’ security posture",
+              "website": "https://malteksolutions.com",
+              "logo": "malteksolutions.png",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/maltek-solutions-llc/"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/@malteksolutions"
+                }
+              ]
+            },
+            {
               "name": "Skillbit",
               "description": "SkillBit Labs is a continuous learning platform designed to help assess and develop cybersecurity skills through hands-on, bite-sized labs. Whether you're an individual getting started in cybersecurity or an enterprise security manager, SkillBit has the resources for you to help take you / your team to the next level.",
               "website": "https://skillbit.com/",
