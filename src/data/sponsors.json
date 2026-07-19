@@ -241,6 +241,22 @@
           "name": "Prizes",
           "sponsors": [
             {
+              "name": "Altered Security",
+              "description": "Start your Red Team training journey Altered Security! Altered Security offers multiple on-prem Red Team and Azure Red Team courses with affordable and enterprise-like hands-on labs. We are the creators of the popular Red Team certifications - CRTP, CRTE and CARTP. Join more than 40K professionals from 130+ countries.",
+              "website": "https://www.alteredsecurity.com/",
+              "logo": "alteredsecurity.png",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/alteredsecurity/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/AlteredSecurity"
+                }
+              ]
+            },
+            {
               "name": "Arcanum Security",
               "description": "Arcanum Information Security provides top-tier security assessments and training. We offer a full range of pentest and red team assessments, as well as comprehensive AI Pentests. Additionally, we train on cutting-edge web assessment techniques, AI Red Teaming and Pentesting, and AI Scaling for security teams.",
               "website": "https://www.arcanum-sec.com",
@@ -257,18 +273,90 @@
               ]
             },
             {
-              "name": "Altered Security",
-              "description": "Start your Red Team training journey Altered Security! Altered Security offers multiple on-prem Red Team and Azure Red Team courses with affordable and enterprise-like hands-on labs. We are the creators of the popular Red Team certifications - CRTP, CRTE and CARTP. Join more than 40K professionals from 130+ countries.",
-              "website": "https://www.alteredsecurity.com/",
-              "logo": "alteredsecurity.png",
+              "name": "HackingHub",
+              "description": "HackingHub is dedicated to teaching the next generation of ethical hackers to hone their skills in real world environments. Led by cybersecurity experts, each hub has been crafted to reflect the environment of today and tomorrow.",
+              "website": "https://www.hackinghub.io",
+              "logo": "hackinghub.png",
               "socials": [
                 {
+                  "name": "X",
+                  "url": "https://www.x.com/hackinghub_io"
+                }
+              ]
+            },
+            {
+              "name": "HackTheBox",
+              "description": "Hack The Box is the leading cyber readiness platform for the agentic era, battle-testing and upskilling both humans and AI agents to enhance organizational cyber resilience. Trusted by the Fortune 500, government agencies, and MSSPs, the platform delivers threat-informed learning paths consisting of real-world scenarios in gamified labs and live-fire simulations that build and validate offensive and defensive cyber capabilities. With a loyal community of more than 4 million members and 800+ enterprise customers, Hack The Box empowers teams and intelligent systems alike to strengthen cyber defenses and reduce breach risk effectively. Delivering continuous learning alongside industry-recognized certifications and certificate programs aligned with major workforce frameworks such as ENISA ECSF and NIST NICE, Hack The Box demonstrates external validation through recognized accreditation and role-based qualification recognition, including its ANAB-accredited HTB Defense Operations Analyst (DOA) certificate program and HTB CPTS, accepted for FedRAMP 3PAO penetration tester personnel.",
+              "website": "http://hackthebox.com/",
+              "logo": "hackthebox.png",
+              "socials": [
+                {
+                  "name": "Discord",
+                  "url": "https://discord.com/invite/hackthebox"
+                },
+                {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/hackthebox.eu"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/hackthebox/"
+                },
+                {
                   "name": "LinkedIn",
-                  "url": "https://www.linkedin.com/company/alteredsecurity/"
+                  "url": "https://www.linkedin.com/company/hackthebox/"
                 },
                 {
                   "name": "X",
-                  "url": "https://x.com/AlteredSecurity"
+                  "url": "https://www.x.com/hackthebox_eu"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/c/HackTheBox"
+                }
+              ]
+            },
+            {
+              "name": "Packt",
+              "description": "Packt is a global, trusted tech publisher empowering developers, security professionals, and engineers with hands-on learning across today's most vital domains — from cybersecurity and AI to DevOps, data, cloud, and more. With a library of over 9,000 titles, Packt delivers practical, real-world guidance to help individuals and teams build skills that matter. At DEF CON, we're proud to support the Red Team Village with a curated collection of books focused on supply chain cybersecurity, offensive security, AI in cybersecurity, and so. Whether you're a red teamer, ethical hacker, or security engineer, Packt's resources are designed to sharpen your skills with tools and techniques that reflect real-world challenges and scenarios.",
+              "website": "https://www.packtpub.com",
+              "logo": "packt.svg",
+              "socials": [
+                {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/PacktPub/"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/packt-publishing/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://www.x.com/PacktPub"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/c/PacktVideo"
+                }
+              ]
+            },
+            {
+              "name": "Pentester Lab",
+              "description": "PentesterLab is a hands-on cybersecurity training platform that helps security professionals understand, find, and exploit real-world web and application vulnerabilities. Its practical labs cover web hacking, security code review, APIs, and real CVEs, with a strong focus on understanding why vulnerabilities exist rather than simply memorising tools and payloads.",
+              "website": "https://pentesterlab.com/",
+              "logo": "pentesterlab.svg",
+              "socials": [
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/pentesterlab"
+                },
+                {
+                  "name": "X",
+                  "url": "https://x.com/pentesterlab"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/@pentesterlab"
                 }
               ]
             },
