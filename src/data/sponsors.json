@@ -273,6 +273,30 @@
               ]
             },
             {
+              "name": "Packt",
+              "description": "Packt is a global, trusted tech publisher empowering developers, security professionals, and engineers with hands-on learning across today's most vital domains — from cybersecurity and AI to DevOps, data, cloud, and more. With a library of over 9,000 titles, Packt delivers practical, real-world guidance to help individuals and teams build skills that matter. At DEF CON, we're proud to support the Red Team Village with a curated collection of books focused on supply chain cybersecurity, offensive security, AI in cybersecurity, and so. Whether you're a red teamer, ethical hacker, or security engineer, Packt's resources are designed to sharpen your skills with tools and techniques that reflect real-world challenges and scenarios.",
+              "website": "https://www.packtpub.com",
+              "logo": "packt.svg",
+              "socials": [
+                {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/PacktPub/"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/company/packt-publishing/"
+                },
+                {
+                  "name": "X",
+                  "url": "https://www.x.com/PacktPub"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/c/PacktVideo"
+                }
+              ]
+            },
+            {
               "name": "PentestingExams.com",
               "description": "PentestingExams by The SecOps Group provides hands-on, practical cybersecurity certifications focused on real-world penetration testing, application security, cloud security, AI/LLM security, and red teaming skills.",
               "website": "https://pentestingexams.com",
