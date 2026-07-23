@@ -1,0 +1,353 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+---
+
+<BaseLayout title="Event Schedule | Red Team Village">
+  <Banner title="Event Schedule" />
+
+  <div
+    class="container mx-auto flex max-w-5xl flex-col gap-12 bg-white px-4 py-12 text-neutral-900"
+  >
+    <section aria-label="Schedule Information">
+      <div class="flex flex-col gap-4 border-l-4 border-red-800 pl-6 sm:ml-4">
+        <h2 class="text-4xl font-bold tracking-tight text-red-800">
+          DEF CON Schedule
+        </h2>
+        <p class="max-w-3xl text-lg leading-relaxed text-neutral-700">
+          Check out our official lineup below. All times are displayed in <strong
+            >Pacific Time (PT)</strong
+          > for Las Vegas. The schedule below will automatically group live sessions
+          together and scroll you right to the action.
+        </p>
+      </div>
+    </section>
+
+    <div
+      id="schedule-container"
+      class="relative flex min-h-[50vh] flex-col gap-16"
+    >
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-red-800"
+      >
+        <i class="fa-solid fa-circle-notch fa-spin fa-3x mb-4"></i>
+        <p class="animate-pulse text-lg font-medium text-neutral-600">
+          Loading live schedule...
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Configuration
+  const SCHEDULE_URL = "https://sessionize.com/api/v2/myf4u6ap/view/All";
+  const TIME_ZONE = "America/Los_Angeles";
+  const MAX_DESC_LENGTH = 512;
+
+  // Helper to format times
+  const formatTime = (dateObj) => {
+    return new Intl.DateTimeFormat("en-US", {
+      timeZone: TIME_ZONE,
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    }).format(dateObj);
+  };
+
+  // Helper to format Day Headers
+  const formatDayString = (dateObj) => {
+    return new Intl.DateTimeFormat("en-US", {
+      timeZone: TIME_ZONE,
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+    }).format(dateObj);
+  };
+
+  // Main Client-Side Fetch & Render Function
+  async function loadAndRenderSchedule() {
+    const container = document.getElementById("schedule-container");
+
+    try {
+      const response = await fetch(SCHEDULE_URL);
+      if (!response.ok) throw new Error("Network response was not ok");
+
+      const scheduleData = await response.json();
+
+      // Map lookups
+      const speakersMap = new Map(
+        (scheduleData.speakers || []).map((s) => [s.id, s]),
+      );
+      const roomsMap = new Map(
+        (scheduleData.rooms || []).map((r) => [r.id, r]),
+      );
+
+      // Enrich and Sort
+      const enrichedSessions = (scheduleData.sessions || [])
+        .map((session) => {
+          const rawDesc = session.description || "";
+          const needsTruncation = rawDesc.length > MAX_DESC_LENGTH;
+          const previewText = needsTruncation
+            ? rawDesc.substring(0, MAX_DESC_LENGTH).trim() + "..."
+            : rawDesc;
+
+          return {
+            ...session,
+            room: roomsMap.get(session.roomId),
+            presenters: (session.speakers || [])
+              .map((id) => speakersMap.get(id))
+              .filter(Boolean),
+            startDateObj: new Date(session.startsAt),
+            endDateObj: new Date(session.endsAt),
+            previewText,
+            needsTruncation,
+            // Pre-escape HTML for safe rendering
+            safeTitle: escapeHTML(session.title),
+            safeDesc: escapeHTML(rawDesc),
+            safePreview: escapeHTML(previewText),
+          };
+        })
+        .sort((a, b) => {
+          const timeDiff = a.startDateObj.getTime() - b.startDateObj.getTime();
+          if (timeDiff !== 0) return timeDiff;
+          return (a.room?.sort || 0) - (b.room?.sort || 0);
+        });
+
+      // Group by Day
+      const groupedSchedule = {};
+      enrichedSessions.forEach((session) => {
+        const dayString = formatDayString(session.startDateObj);
+        if (!groupedSchedule[dayString]) groupedSchedule[dayString] = [];
+        groupedSchedule[dayString].push(session);
+      });
+
+      // Generate HTML string
+      let htmlOutput = "";
+
+      Object.entries(groupedSchedule).forEach(([dayString, sessions]) => {
+        const dayId = `day-${dayString.replace(/\s+/g, "-").toLowerCase()}`;
+
+        htmlOutput += `
+          <section aria-labelledby="${dayId}">
+            <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-sm py-4 mb-8 border-b-2 border-red-800 shadow-sm">
+              <h2 id="${dayId}" class="text-3xl font-bold text-red-800 uppercase tracking-wide">
+                ${dayString}
+              </h2>
+            </div>
+            <div class="flex flex-col gap-8 border-l-2 border-red-800/30 sm:ml-4 pb-4">
+        `;
+
+        sessions.forEach((session) => {
+          // Generate Speakers HTML
+          let speakersHtml = "";
+          if (session.presenters.length > 0) {
+            speakersHtml = `<div class="flex shrink-0 flex-row md:flex-col items-center justify-center gap-4 border-b border-neutral-100 bg-neutral-50 p-6 md:w-48 md:border-r md:border-b-0 overflow-x-auto">`;
+            session.presenters.forEach((presenter) => {
+              const avatar = presenter.profilePicture
+                ? `<img src="${presenter.profilePicture}" alt="${escapeHTML(presenter.fullName)}" class="h-20 w-20 rounded-full border-[4px] border-neutral-300 object-cover shadow-sm transition-transform group-hover:border-red-800" loading="lazy" />`
+                : `<div class="flex h-20 w-20 items-center justify-center rounded-full border-[4px] border-neutral-300 bg-neutral-200 text-xl font-bold text-neutral-500 shadow-sm group-hover:border-red-800">${escapeHTML(presenter.firstName.charAt(0))}${escapeHTML(presenter.lastName.charAt(0))}</div>`;
+
+              speakersHtml += `
+                <div class="flex flex-col items-center text-center gap-2">
+                  ${avatar}
+                  <span class="text-sm font-semibold text-neutral-800 leading-tight">${escapeHTML(presenter.fullName)}</span>
+                </div>
+              `;
+            });
+            speakersHtml += `</div>`;
+          }
+
+          // Generate Description HTML
+          let descriptionHtml = "";
+          if (session.safeDesc) {
+            if (session.needsTruncation) {
+              descriptionHtml = `
+                <div class="description-container mt-2 text-base leading-relaxed text-neutral-600 prose prose-sm prose-neutral max-w-none">
+                  <div class="preview-text whitespace-pre-wrap">${session.safePreview}</div>
+                  <div class="full-text hidden whitespace-pre-wrap">${session.safeDesc}</div>
+                  <button class="toggle-description-btn cursor-pointer mt-3 text-sm font-bold text-red-800 transition-colors hover:text-red-900 hover:underline focus:outline-none">
+                    Read More <i class="fa-solid fa-chevron-down ml-1"></i>
+                  </button>
+                </div>
+              `;
+            } else {
+              descriptionHtml = `<div class="mt-2 text-base leading-relaxed text-neutral-600 prose prose-sm prose-neutral max-w-none whitespace-pre-wrap">${session.safeDesc}</div>`;
+            }
+          }
+
+          // Session Card HTML
+          htmlOutput += `
+            <div class="session-card group relative pl-4 sm:pl-8 transition-all duration-500" data-start="${session.startsAt}" data-end="${session.endsAt}">
+              <div class="timeline-dot absolute top-8 -left-2.5 z-20 h-5 w-5 rounded-full border-4 border-white bg-red-800 shadow-sm transition-colors"></div>
+              <div class="session-content flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-all hover:shadow-md md:flex-row">
+                ${speakersHtml}
+                <div class="flex grow flex-col justify-center p-6">
+                  <div class="mb-3 flex flex-wrap items-center gap-3">
+                    <span class="rounded-full border border-red-200 bg-red-50 px-3 py-1 text-sm font-bold tracking-wider text-red-800">
+                      <i class="fa-regular fa-clock mr-1"></i>
+                      ${formatTime(session.startDateObj)} - ${formatTime(session.endDateObj)} PT
+                    </span>
+                    ${
+                      session.room
+                        ? `
+                      <span class="rounded-full border border-neutral-200 bg-neutral-100 px-3 py-1 text-sm font-medium text-neutral-700">
+                        <i class="fa-solid fa-location-dot mr-1"></i>
+                        ${escapeHTML(session.room.name)}
+                      </span>
+                    `
+                        : ""
+                    }
+                    <span class="live-badge hidden rounded-full bg-red-600 px-3 py-1 text-sm font-bold text-white animate-pulse">
+                      <i class="fa-solid fa-tower-broadcast mr-1"></i> LIVE NOW
+                    </span>
+                  </div>
+                  <h3 class="mb-2 text-2xl leading-tight font-bold text-neutral-900 group-hover:text-red-800 transition-colors">
+                    ${session.safeTitle}
+                  </h3>
+                  ${descriptionHtml}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        htmlOutput += `</div></section>`;
+      });
+
+      // Inject HTML to DOM
+      container.innerHTML = htmlOutput;
+
+      // Initialize UI features (Toggles and Live Status)
+      attachToggleListeners();
+      updateScheduleUI();
+
+      // Start the 60-second timer to update live statuses
+      setInterval(updateScheduleUI, 60000);
+    } catch (error) {
+      console.error("Failed to load schedule:", error);
+      container.innerHTML = `
+        <div class="text-center py-12 text-red-800">
+          <i class="fa-solid fa-triangle-exclamation fa-3x mb-4"></i>
+          <h3 class="text-xl font-bold">Unable to load schedule</h3>
+          <p class="text-neutral-600 mt-2">Please try refreshing the page later.</p>
+        </div>
+      `;
+    }
+  }
+
+  // Utility: Escape HTML to prevent XSS from JSON payload
+  function escapeHTML(str) {
+    if (!str) return "";
+    return str.replace(
+      /[&<>'"]/g,
+      (tag) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          "'": "&#39;",
+          '"': "&quot;",
+        })[tag] || tag,
+    );
+  }
+
+  // UI Interaction functions
+  function attachToggleListeners() {
+    document.querySelectorAll(".toggle-description-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const container = e.currentTarget.closest(".description-container");
+        if (!container) return;
+
+        const preview = container.querySelector(".preview-text");
+        const full = container.querySelector(".full-text");
+        const button = e.currentTarget;
+
+        if (full.classList.contains("hidden")) {
+          full.classList.remove("hidden");
+          preview.classList.add("hidden");
+          button.innerHTML =
+            'Read Less <i class="fa-solid fa-chevron-up ml-1"></i>';
+        } else {
+          full.classList.add("hidden");
+          preview.classList.remove("hidden");
+          button.innerHTML =
+            'Read More <i class="fa-solid fa-chevron-down ml-1"></i>';
+        }
+      });
+    });
+  }
+
+  function updateScheduleUI() {
+    const now = new Date();
+    const sessions = document.querySelectorAll(".session-card");
+    const liveSessions = [];
+    const futureSessions = [];
+
+    sessions.forEach((card) => {
+      const start = new Date(card.dataset.start);
+      const end = new Date(card.dataset.end);
+
+      const contentBox = card.querySelector(".session-content");
+      const timelineDot = card.querySelector(".timeline-dot");
+      const liveBadge = card.querySelector(".live-badge");
+
+      if (now >= start && now <= end) {
+        // LIVE
+        liveSessions.push(card);
+        contentBox.classList.add("ring-2", "ring-red-600", "bg-red-50/30");
+        timelineDot.classList.replace("bg-red-800", "bg-red-600");
+        timelineDot.classList.replace("border-white", "border-red-200");
+        liveBadge.classList.remove("hidden");
+        card.classList.remove("opacity-60", "grayscale-[50%]");
+        card.style.order = "2";
+      } else if (now > end) {
+        // PAST
+        card.classList.add("opacity-60", "grayscale-[50%]");
+        contentBox.classList.remove("ring-2", "ring-red-600", "bg-red-50/30");
+        timelineDot.classList.replace("bg-red-600", "bg-red-800");
+        timelineDot.classList.replace("border-red-200", "border-white");
+        liveBadge.classList.add("hidden");
+        card.style.order = "1";
+      } else {
+        // FUTURE
+        futureSessions.push(card);
+        card.classList.remove("opacity-60", "grayscale-[50%]");
+        contentBox.classList.remove("ring-2", "ring-red-600", "bg-red-50/30");
+        timelineDot.classList.replace("bg-red-600", "bg-red-800");
+        timelineDot.classList.replace("border-red-200", "border-white");
+        liveBadge.classList.add("hidden");
+        card.style.order = "3";
+      }
+    });
+
+    // Handle Scroll logic on initial paint
+    if (!window.hasScrolledToLive) {
+      // Prefer live sessions, fallback to the next upcoming future session
+      const targetSession =
+        liveSessions.length > 0
+          ? liveSessions[0]
+          : futureSessions.length > 0
+            ? futureSessions[0]
+            : null;
+
+      if (targetSession) {
+        setTimeout(() => {
+          const yOffset = -100;
+          const y =
+            targetSession.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+          window.hasScrolledToLive = true;
+        }, 150);
+      } else {
+        // Everything is in the past, no scrolling needed
+        window.hasScrolledToLive = true;
+      }
+    }
+  }
+
+  // Kick everything off when the page loads
+  document.addEventListener("DOMContentLoaded", loadAndRenderSchedule);
+</script>
