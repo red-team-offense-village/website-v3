@@ -1,5 +1,10 @@
 [
   {
+    "id": "schedule",
+    "name": "<i class='fas fa-person-chalkboard'></i> SCHEDULE",
+    "url": "schedule/"
+  },
+  {
     "id": "rtv-team",
     "name": "<i class='fas fa-users'></i> TEAM",
     "url": "team/"
