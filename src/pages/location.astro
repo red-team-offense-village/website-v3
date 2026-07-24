@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { Image } from "astro:assets";
+
+import floorPlan from "../assets/images/venue/dc34-location.webp";
+---
+
+<BaseLayout title="Location | Red Team Village">
+  <Banner title="Location" />
+
+  <article class="post mx-auto max-w-400 bg-white py-12">
+    <div class="mx-auto px-4">
+      <div class="mb-8 text-center text-neutral-900">
+        <h2 class="text-3xl font-bold tracking-tight">DEF CON 34 Floor Plan</h2>
+        <p class="mt-2 text-lg text-neutral-600">
+          Find us at <span class="font-semibold text-red-700"
+            >Red Team Village [309]</span
+          > in Hall 1.
+        </p>
+      </div>
+
+      <!-- Map & Overlay Container -->
+      <div
+        class="relative overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-900 shadow-2xl"
+      >
+        <!-- Base Image -->
+        <Image
+          src={floorPlan}
+          alt="DEF CON Map highlighting Red Team Village location"
+          class="block h-auto w-full select-none"
+          loading="eager"
+        />
+
+        <!-- Overlay SVG -->
+        <svg
+          class="pointer-events-none absolute inset-0 h-full w-full"
+          viewBox={`0 0 ${floorPlan.width} ${floorPlan.height}`}
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <polygon
+            id="rtv-highlight-shape"
+            points="1730,1244 1730,1472 2297,1472 2178,1184 2124,1184 2124,1244"
+            class="rtv-highlight transition-all"
+          >
+            <title>Red Team Village [309]</title>
+          </polygon>
+        </svg>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .rtv-highlight {
+    fill: rgba(239, 68, 68, 0.08);
+    stroke: #ff2222;
+    stroke-width: 6;
+    stroke-linejoin: round;
+
+    /* Creates 16px dashes with 12px gaps */
+    stroke-dasharray: 16, 12;
+
+    /* Infinite marching dashes animation */
+    animation: march 1s linear infinite;
+
+    /* Subtle permanent neon glow */
+    filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+
+    pointer-events: auto;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+  }
+
+  .rtv-highlight:hover {
+    fill: rgba(239, 68, 68, 0.3);
+    filter: drop-shadow(0 0 12px rgba(255, 0, 0, 1));
+  }
+
+  @keyframes march {
+    to {
+      stroke-dashoffset: -28; /* Total length of 16 + 12 */
+    }
+  }
+</style>
