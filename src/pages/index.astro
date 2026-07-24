@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Banner from "../components/Banner.astro";
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
 // Query the validated content layer directly
@@ -18,145 +18,104 @@ const hasMoreUpdates = allUpdates.length > 5;
 <BaseLayout title="Home | Red Team Village">
   <Banner title="Red Team Village" />
 
-  {/* Call for Everything card */}
+  {/* Attendee Quick Navigation Section */}
   <section
     class="bg-neutral-100 px-4 py-12 text-neutral-900"
-    aria-labelledby="calls-heading"
+    aria-labelledby="quick-nav-heading"
   >
     <div class="mx-auto max-w-6xl">
       <div class="rounded-lg border-2 border-red-800 bg-white p-8 shadow-lg">
         <div class="mb-8 text-center">
-          <div class="mb-6 flex items-center justify-center gap-4 text-red-800">
-            <i class="fas fa-shield-alt text-4xl" aria-hidden="true"></i>
+          <div class="mb-2 flex items-center justify-center gap-4 text-red-800">
+            <i class="fas fa-compass text-3xl" aria-hidden="true"></i>
             <h2
-              id="calls-heading"
-              class="text-4xl font-bold tracking-tight text-neutral-800"
+              id="quick-nav-heading"
+              class="text-3xl font-bold tracking-tight text-neutral-800"
             >
-              Call for Everything
+              Attendee Guide
             </h2>
           </div>
-
-          <p
-            class="mx-auto mb-8 max-w-4xl text-xl leading-relaxed text-neutral-700"
-          >
-            The gates are officially open for DEF CON 34. We're looking for the
-            builders, the breakers, and the dedicated volunteers who make the
-            Red Team Village the premier destination for offensive security
-            mastery.
+          <p class="text-base text-neutral-600">
+            Everything you need to navigate DEF CON 34
           </p>
+        </div>
 
-          <div class="grid grid-cols-1 gap-8 text-left lg:grid-cols-3">
-            {/* CFP Card */}
-            <div
-              class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm"
-            >
-              <div>
-                <div class="mb-4 flex items-center gap-3 text-red-800">
-                  <i
-                    class="fas fa-chalkboard-teacher text-2xl"
-                    aria-hidden="true"></i>
-                  <h3 class="text-xl font-bold tracking-tight text-neutral-800">
-                    Call for Presentations
-                  </h3>
-                </div>
-                <p class="mb-4 text-sm leading-relaxed text-neutral-700">
-                  The Red Team Village is looking for researchers and operators
-                  to lead our most interactive year yet! This year, we are
-                  prioritizing <strong class="font-bold text-neutral-900"
-                    >Tactics</strong
-                  >—hands-on, intimate learning sessions—and
-                  <strong class="font-bold text-neutral-900">Workshops</strong> that
-                  pair deep-dive presentations with practical application.
-                </p>
-                <p class="mb-6 text-sm leading-relaxed text-neutral-700">
-                  Showcase your research, give back to the offensive security
-                  community, and help us make this year's village a powerhouse
-                  of tactical knowledge. Submissions are now open!
-                </p>
+        <div class="grid grid-cols-1 gap-8 text-left lg:grid-cols-3">
+          {/* Location Card */}
+          <div
+            class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+          >
+            <div>
+              <div class="mb-3 flex items-center gap-3 text-red-800">
+                <i class="fas fa-map-marker-alt text-2xl" aria-hidden="true"
+                ></i>
+                <h3 class="text-xl font-bold tracking-tight text-neutral-800">
+                  Location
+                </h3>
               </div>
-              <span
-                class="block w-fit rounded-md bg-gray-600 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors select-none"
-                aria-label="Submit a presentation to the DEF CON 34 Call for Papers (closed)"
-              >
-                Closed
-              </span>
+              <p class="mb-6 text-sm leading-relaxed text-neutral-700">
+                Find Red Team Village [309] in Hall 1 on the interactive floor
+                plan.
+              </p>
             </div>
+            <a
+              href="/location"
+              class="block w-full rounded-md bg-red-800 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-900"
+            >
+              View Map <i
+                class="fas fa-arrow-right ml-1.5 text-xs"
+                aria-hidden="true"></i>
+            </a>
+          </div>
 
-            {/* Volunteers Card */}
-            <div
-              class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm"
-            >
-              <div>
-                <div class="mb-4 flex items-center gap-3 text-red-800">
-                  <i class="fas fa-users text-2xl" aria-hidden="true"></i>
-                  <h3 class="text-xl font-bold tracking-tight text-neutral-800">
-                    Call for Volunteers
-                  </h3>
-                </div>
-                <p class="mb-4 text-sm leading-relaxed text-neutral-700">
-                  The Village runs on the passion of our community. Volunteering
-                  is the best way to get behind the scenes, network with
-                  industry leaders, and contribute to the offensive security
-                  ecosystem. We have roles for all skill levels, from technical
-                  support to logistics.
-                </p>
-                <p class="mb-6 text-sm leading-relaxed text-neutral-700">
-                  All volunteers receive <strong
-                    class="font-bold text-neutral-900"
-                    >exclusive RTV swag</strong
-                  >, an invite to
-                  <strong class="font-bold text-neutral-900"
-                    >the legendary RTV party</strong
-                  >, and our sincere appreciation!
-                </p>
+          {/* Schedule Card */}
+          <div
+            class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+          >
+            <div>
+              <div class="mb-3 flex items-center gap-3 text-red-800">
+                <i class="fas fa-clock text-2xl" aria-hidden="true"></i>
+                <h3 class="text-xl font-bold tracking-tight text-neutral-800">
+                  Schedule
+                </h3>
               </div>
-              <span
-                class="block w-fit rounded-md bg-gray-600 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors select-none"
-                aria-label="Submit a presentation to the DEF CON 34 Call for Papers (closed)"
-              >
-                Closed
-              </span>
+              <p class="mb-6 text-sm leading-relaxed text-neutral-700">
+                Browse our Workshop, Tactics, and special events schedule.
+              </p>
             </div>
+            <a
+              href="/schedule"
+              class="block w-full rounded-md bg-red-800 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-900"
+            >
+              View Schedule <i
+                class="fas fa-arrow-right ml-1.5 text-xs"
+                aria-hidden="true"></i>
+            </a>
+          </div>
 
-            {/* Sponsors Card */}
-            <div
-              class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm"
-            >
-              <div>
-                <div class="mb-4 flex items-center gap-3 text-red-800">
-                  <i class="fas fa-handshake text-2xl" aria-hidden="true"></i>
-                  <h3 class="text-xl font-bold tracking-tight text-neutral-800">
-                    Call for Sponsors
-                  </h3>
-                </div>
-                <p class="mb-4 text-sm leading-relaxed text-neutral-700">
-                  We are looking for partners to help fuel our educational
-                  mission—delivering the practical, hands-on learning that
-                  bridges the gap between theory and the real world. Sponsoring
-                  RTV is a commitment to the growth of the craft.
-                </p>
-                <p class="mb-6 text-sm leading-relaxed text-neutral-700">
-                  As a <strong class="font-bold text-neutral-900"
-                    >501(c)(3)</strong
-                  > nonprofit, your support keeps training accessible while giving
-                  your brand direct, vital engagement with over <strong
-                    class="font-bold text-neutral-900"
-                    >60,000+ security professionals</strong
-                  >.
-                </p>
+          {/* Events Card */}
+          <div
+            class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+          >
+            <div>
+              <div class="mb-3 flex items-center gap-3 text-red-800">
+                <i class="fas fa-flag text-2xl" aria-hidden="true"></i>
+                <h3 class="text-xl font-bold tracking-tight text-neutral-800">
+                  Events & CTFs
+                </h3>
               </div>
-              <a
-                href="https://drive.google.com/file/d/1344CxfPdZaCgOZqElDNIule9rLe8djVY/view?usp=sharing"
-                class="block w-fit rounded-md bg-red-800 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-900"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download the official Red Team Village sponsorship prospectus PDF (opens in a new tab)"
-              >
-                RTV Prospectus <i
-                  class="fas fa-external-link-alt ml-2 text-xs"
-                  aria-hidden="true"></i>
-              </a>
+              <p class="mb-6 text-sm leading-relaxed text-neutral-700">
+                Explore everything we have going on at DEF CON 34.
+              </p>
             </div>
+            <a
+              href="/events"
+              class="block w-full rounded-md bg-red-800 px-6 py-2.5 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-900"
+            >
+              View Events <i
+                class="fas fa-arrow-right ml-1.5 text-xs"
+                aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>

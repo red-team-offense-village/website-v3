@@ -1,5 +1,16 @@
 [
   {
+    "title": "DEF CON 34 Call for Everything",
+    "date": "May 1, 2026",
+    "content": "DEF CON 34 preparations are under way! While our Call for Presentations and Call for Volunteers are now closed, our Call for Sponsors remains open. As a 501(c)(3) nonprofit, sponsor partnerships directly fuel our hands-on educational mission for thousands of attendees. Check out our official sponsorship prospectus to support the village!",
+    "tag": ["DEF CON 34", "Sponsors"],
+    "url": {
+      "href": "https://drive.google.com/file/d/1344CxfPdZaCgOZqElDNIule9rLe8djVY/view?usp=sharing",
+      "text": "Sponsorship Prospectus",
+      "external": true
+    }
+  },
+  {
     "title": "2026 New Board Members",
     "date": "February 14, 2026",
     "content": "Please join us in welcoming the newest additions to the Red Team Village Board of Directors! 🎉 These leaders are stepping in to strengthen our mission, expand our programs, and continue building hands on opportunities for the community.",
