@@ -1,16 +1,5 @@
 [
   {
-    "title": "RTV CRON 0x5",
-    "dateRange": "June 26, 2026",
-    "times": "TBD",
-    "location": "Red Team Village YouTube Channel",
-    "description": "The fifth episode of RTV CRON is coming June 26th!",
-    "image": {
-      "src": "rtv-cron.png",
-      "alt": "RTV CRON 0x5"
-    }
-  },
-  {
     "title": "Red Team Village @ DEF CON 34",
     "dateRange": "August 6-9, 2026",
     "times": "TBD",
@@ -26,5 +15,34 @@
       "external": true
     },
     "tags": ["Conference", "DEF CON"]
+  },
+  {
+    "title": "RTV CTF @ DEF CON 34",
+    "dateRange": "August 7-9, 2026",
+    "times": "8/7 10:30 AM - 8/9 1:00 PM",
+    "location": "Las Vegas Convention Center, Red Team Village Area",
+    "description": "The Red Team Capture the Flag (CTF) competition at DEFCON is a challenging and exciting event that tests the skills of participants in offensive security. The objective of the Red Team CTF is for teams to successfully complete challenges faced by Red Teams.<br><br>The Red Team CTF is designed to simulate real-world scenarios in which attackers attempt to penetrate the security of a network or system. Participants are expected to use a wide range of hacking techniques, tools, and skills to identify and exploit vulnerabilities in the target network.<br><br>Teams are typically composed of experienced hackers, penetration testers, and security researchers who have a deep understanding of the latest cybersecurity threats and attack techniques. They must work together to uncover and exploit vulnerabilities in the target network, while also evading detection and countermeasures put in place by the Blue Team.<br><br>The Red Team CTF at DEFCON is considered one of the most challenging and prestigious CTF competitions in the world, with participants coming from all over the globe to compete. It is a high-pressure, high-stakes event that tests the limits of participants' technical and strategic abilities, and offers a unique opportunity to showcase their skills and knowledge in front of a global audience of Hackers.",
+    "image": {
+      "src": "rtv-shield.svg",
+      "alt": "RTV CTF at DEF CON 34"
+    },
+    "link": {
+      "url": "https://mctf.io/rtv",
+      "text": "Register now",
+      "external": true
+    },
+    "tags": ["Competition", "CTF", "DEF CON"]
+  },
+  {
+    "title": "Village of Villages @ DEF CON 34",
+    "dateRange": "August 7-9, 2026",
+    "times": "8/7 10:30 AM - 8/9 1:00 PM",
+    "location": "Las Vegas Convention Center, Red Team Village Area",
+    "description": "This year as part of the Village of Villages we have a challenge crossing four villages. You must visit each of the villages: Blue Team, Red Team, Biohacking and Noob Village to acquire the pieces. At each CTF booth you will have to social engineer them to get the piece.  Collect all four, assemble the code, and claim the flag. Miss even one village, and the puzzle stays broken. The whole con is your board. Go get it.",
+    "image": {
+      "src": "village-of-villages-34.jpg",
+      "alt": "RTV CTF at DEF CON 34"
+    },
+    "tags": ["CTF", "DEF CON", "Scavenger Hunt"]
   }
 ]

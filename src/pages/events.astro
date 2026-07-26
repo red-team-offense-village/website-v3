@@ -95,9 +95,10 @@ scheduledEvents.sort((a, b) => a.data.index - b.data.index);
                       </div>
 
                       {/* Description Panel */}
-                      <p class="my-4 text-lg leading-relaxed text-neutral-700">
-                        {event.description}
-                      </p>
+                      <p
+                        class="my-4 text-lg leading-relaxed text-neutral-700"
+                        set:html={event.description}
+                      />
 
                       {/* Call To Action Buttons */}
                       {event.link && (
