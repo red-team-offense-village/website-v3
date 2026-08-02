@@ -1,0 +1,271 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import { Image } from "astro:assets";
+import logo from "../assets/images/rtv-logo.webp";
+---
+
+<BaseLayout title="DEF CON 34 Party & NFC Trinket | Red Team Village">
+  <Banner title="Red Team Village Party" />
+
+  <div
+    class="container mx-auto flex max-w-5xl flex-col gap-12 bg-white px-4 py-12 text-neutral-900"
+  >
+    {/* Access Confirmed Hero Banner */}
+    <section aria-label="Access Confirmed Hero">
+      <div
+        class="rounded-lg border-2 border-red-800 bg-white p-8 shadow-lg md:p-10"
+      >
+        <div
+          class="flex flex-col-reverse items-center justify-between gap-8 md:flex-row md:items-start"
+        >
+          <div class="flex-1 text-left">
+            <div
+              class="mb-8 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-bold tracking-wider text-red-800 uppercase"
+            >
+              <i class="fas fa-terminal text-xs" aria-hidden="true"></i>
+              <span>Perimeter Breached</span>
+            </div>
+            <h2
+              class="mb-4 text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl"
+            >
+              YOU'RE IN.
+            </h2>
+            <p class="text-lg leading-relaxed text-neutral-700">
+              Welcome to the <strong class="text-red-800"
+                >Red Team Village Party</strong
+              > at DEF CON 34! Thank you for joining us—your physical NFC token got
+              you past the guards.
+            </p>
+          </div>
+
+          <div class="flex shrink-0 items-center justify-center">
+            <div
+              class="flex h-48 w-48 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 p-4 shadow-inner md:h-56 md:w-56"
+            >
+              <Image
+                src={logo}
+                alt="Red Team Village Party Logo"
+                class="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Hardware Specs Section */}
+    <section id="wristband" aria-labelledby="wristband-heading">
+      <div
+        class="rounded-lg border border-neutral-200 bg-neutral-50 p-8 shadow-sm"
+      >
+        <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
+          {/* Left Column: Heading + Description */}
+          <div class="md:col-span-2">
+            <div class="mb-6 flex items-center gap-3 text-red-800">
+              <i class="fas fa-microchip text-3xl" aria-hidden="true"></i>
+              <h2
+                id="wristband-heading"
+                class="text-3xl font-bold tracking-tight text-neutral-800"
+              >
+                The NFC Wristband
+              </h2>
+            </div>
+
+            <p class="mb-4 text-lg leading-relaxed text-neutral-700">
+              This trinket served as your official physical admission badge for
+              the party. Inside is an embedded NTAG series chip—compact, highly
+              durable, and completely re-writeable for your next operation.
+            </p>
+            <p class="text-sm text-neutral-600">
+              Once you leave the party floor, the hardware is yours to keep,
+              inspect, and reprogram.
+            </p>
+          </div>
+
+          {/* Right Column: Specs Box (Aligned with Header) */}
+          <div
+            class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm md:col-span-1"
+          >
+            <h3
+              class="mb-4 font-mono text-sm font-bold tracking-wider text-red-800 uppercase"
+            >
+              Technical Specs
+            </h3>
+            <ul class="space-y-2.5 font-mono text-xs text-neutral-700">
+              <li
+                class="flex items-center justify-between border-b border-neutral-100 pb-2"
+              >
+                <span class="text-neutral-500">IC Type:</span>
+                <span class="font-bold">NTAG213</span>
+              </li>
+              <li
+                class="flex items-center justify-between border-b border-neutral-100 pb-2"
+              >
+                <span class="text-neutral-500">Capacity:</span>
+                <span class="font-bold">144 Bytes User Data</span>
+              </li>
+              <li
+                class="flex items-center justify-between border-b border-neutral-100 pb-2"
+              >
+                <span class="text-neutral-500">Frequency:</span>
+                <span class="font-bold">13.56 MHz</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-neutral-500">Protocol:</span>
+                <span class="font-bold">ISO/IEC 14443A</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Repurposing & Hacker Use Cases Section */}
+    <section aria-labelledby="repurpose-heading">
+      <div class="flex flex-col gap-6">
+        <div class="border-l-4 border-red-800 pl-6">
+          <h2
+            id="repurpose-heading"
+            class="text-3xl font-bold tracking-tight text-red-800 italic"
+          >
+            Claim the Ghost in the Machine
+          </h2>
+          <p class="mt-1 text-lg text-neutral-700">
+            Don't let this silicon sit in a drawer. Reprogram the chip and put
+            it to work in your physical security toolkit.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          {/* Reprogramming Guide Card */}
+          <div
+            class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+          >
+            <div>
+              <div class="mb-4 flex items-center gap-3 text-red-800">
+                <i class="fas fa-mobile-alt text-2xl" aria-hidden="true"></i>
+                <h3 class="text-xl font-bold text-neutral-800">
+                  How to Reprogram
+                </h3>
+              </div>
+              <p class="mb-6 text-sm leading-relaxed text-neutral-700">
+                Use a mobile utility (like <strong>NFC Tools</strong>) or a
+                Proxmark/Flipper Zero to overwrite the NTAG memory container.
+                You can load vCards, custom URLs, payload strings, or custom
+                Wi-Fi triggers.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3 border-t border-neutral-100 pt-4">
+              <a
+                href="https://apps.apple.com/us/app/nfc-tools/id1252962749"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-neutral-800"
+              >
+                <i class="fab fa-apple text-sm" aria-hidden="true"></i>
+                <span>iOS App Store</span>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.wakdev.wdnfc&hl=en_US"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-neutral-800"
+              >
+                <i class="fab fa-google-play text-sm" aria-hidden="true"></i>
+                <span>Google Play</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Hacker Use Cases Card */}
+          <div
+            class="flex flex-col justify-between rounded-lg border border-neutral-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+          >
+            <div>
+              <div class="mb-4 flex items-center gap-3 text-red-800">
+                <i class="fas fa-user-secret text-2xl" aria-hidden="true"></i>
+                <h3 class="text-xl font-bold text-neutral-800">
+                  Hacker Use Cases
+                </h3>
+              </div>
+              <ul class="space-y-3 text-sm text-neutral-700">
+                <li class="flex items-start gap-3">
+                  <i
+                    class="fas fa-wifi mt-1 shrink-0 text-red-800"
+                    aria-hidden="true"></i>
+                  <span
+                    ><strong>Guest Wi-Fi Provisioning:</strong> Tap to auto-connect
+                    mobile clients to guest networks.</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="fas fa-address-card mt-1 shrink-0 text-red-800"
+                    aria-hidden="true"></i>
+                  <span
+                    ><strong>Digital Business Card:</strong> Instant vCard payload
+                    transfer to smartphones.</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="fas fa-external-link-alt mt-1 shrink-0 text-red-800"
+                    aria-hidden="true"></i>
+                  <span
+                    ><strong>Portfolio / Terminal Link:</strong> Redirect to your
+                    personal GitHub, blog, or web shell.</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    class="fas fa-key mt-1 shrink-0 text-red-800"
+                    aria-hidden="true"></i>
+                  <span
+                    ><strong>Physical Auth Tag:</strong> Trigger Home Assistant or
+                    mobile automation workflows.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Support & Sponsorship Section */}
+    <section id="about" aria-labelledby="support-heading">
+      <div
+        class="rounded-lg border-2 border-red-800 bg-white p-8 text-neutral-900 shadow-lg"
+      >
+        <div class="mx-auto max-w-3xl text-center">
+          <div
+            class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-red-50 text-red-800"
+          >
+            <i class="fas fa-handshake text-3xl" aria-hidden="true"></i>
+          </div>
+          <h2
+            id="support-heading"
+            class="mb-4 text-3xl font-bold tracking-tight text-neutral-800"
+          >
+            Support Red Team Village
+          </h2>
+          <p class="mb-6 text-lg leading-relaxed text-neutral-700">
+            The Red Team Village is dedicated to advancing the craft of
+            offensive security through community, education, and open-source
+            tools. Help us keep the lights on and the technical skills sharp for
+            future DEF CON events.
+          </p>
+          <a
+            href="mailto:sponsor@redteamvillage.io"
+            class="inline-flex items-center gap-2 rounded-md bg-red-800 px-8 py-3 font-bold text-white shadow-md transition-colors hover:bg-red-900 focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:outline-none"
+          >
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>Sponsor Our Mission</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
