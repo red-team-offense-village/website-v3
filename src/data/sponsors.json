@@ -273,6 +273,18 @@
               ]
             },
             {
+              "name": "HackerWarehouse",
+              "description": "HackerWarehouse.com aims to be your ultimate destination for all niche products favored by tech enthusiasts, particularly those in the hacking and cyber security industries. We offer a wide range of high-quality tools and gear from top brands, supporting both professional and hobbyist endeavors in defense, offense, and beyond.",
+              "website": "https://hackerwarehouse.com/",
+              "logo": "hackerwarehouse.webp",
+              "socials": [
+                {
+                  "name": "X",
+                  "url": "https://x.com/hackerwarehouse"
+                }
+              ]
+            },
+            {
               "name": "HackingHub",
               "description": "HackingHub is dedicated to teaching the next generation of ethical hackers to hone their skills in real world environments. Led by cybersecurity experts, each hub has been crafted to reflect the environment of today and tomorrow.",
               "website": "https://www.hackinghub.io",
